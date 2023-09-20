@@ -267,3 +267,4 @@ Received Import Request.
 Start importing Assets/Scripts/FirstPersonController.cs using Guid(55919ac34a26952479f3fc91f777b2fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e26492f72ca39af7cb34d60efb3dbca8') in 0.267172 seconds 
   Import took 0.274196 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
