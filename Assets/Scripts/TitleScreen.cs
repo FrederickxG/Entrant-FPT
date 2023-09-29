@@ -29,4 +29,9 @@ public class TitleScreen : MonoBehaviour
     {
         SceneManager.LoadScene("HelpMenu");
     }
+
+     public void Return()
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }
 }
