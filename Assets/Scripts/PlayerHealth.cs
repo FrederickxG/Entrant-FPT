@@ -5,17 +5,21 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
 
-    public int maxHealth = 100;
-    public int playerHealth;
+  public float maxHealth = 100;
+  public float currentHealth = 100;
 
-    // Start is called before the first frame update
-    void Start()
+    public void TakeDamage(float damage)
     {
-        playerHealth = maxHealth;
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
 
-     public void PlayerTakeDamage(int damage)
+    private void Die()
     {
-           playerHealth = playerHealth - damage;
+        Debug.Log("Player has died!");
     }
 }
