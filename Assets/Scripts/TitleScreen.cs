@@ -11,7 +11,7 @@ public class TitleScreen : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("TestingGrounds");
+        SceneManager.LoadScene("Airport(LVL1)");
     }
 
     public void Quit()
