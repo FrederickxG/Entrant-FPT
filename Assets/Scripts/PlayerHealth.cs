@@ -4,41 +4,49 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-
-   public float maxHealth = 100;
+    public float maxHealth = 100;
     public float currentHealth = 100;
     public float shieldHealth = 50;
     public float shieldRechargeTime = 30;
-    private bool isBlocking = false;
     private float timeSinceLastBlocked = 0;
+    private bool isBlocking = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        timeSinceLastBlocked += Time.deltaTime;
+
+        if (timeSinceLastBlocked >= shieldRechargeTime)
+        {
+            if (shieldHealth < maxHealth)
+            {
+                shieldHealth += Time.deltaTime;
+            }
+
+            if (shieldHealth > maxHealth)
+            {
+                shieldHealth = maxHealth;
+            }
+
+            timeSinceLastBlocked = 0;
+        }
+
+        // Check if the E key is being held down
+        if (Input.GetKey(KeyCode.E))
         {
             isBlocking = true;
         }
-
-        if (Input.GetKeyUp(KeyCode.E))
+        else
         {
             isBlocking = false;
         }
 
-        if (isBlocking)
-        {
-            timeSinceLastBlocked += Time.deltaTime;
-
-            if (timeSinceLastBlocked >= shieldRechargeTime)
-            {
-                shieldHealth = 50;
-                timeSinceLastBlocked = 0;
-            }
-        }
+        // Update the current health based on the shield health
+        currentHealth = Mathf.Max(maxHealth - shieldHealth, 0);
     }
 
     public void TakeDamage(float damage)
     {
-        if (isBlocking)
+        if (!isBlocking)
         {
             shieldHealth -= damage;
 
@@ -50,15 +58,6 @@ public class PlayerHealth : MonoBehaviour
                 {
                     Die();
                 }
-            }
-        }
-        else
-        {
-            currentHealth -= damage;
-
-            if (currentHealth <= 0)
-            {
-                Die();
             }
         }
     }
