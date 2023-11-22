@@ -155,3 +155,4 @@ Received Import Request.
 Start importing Assets/Scenes/Escape Room.unity using Guid(cf36b0deaf3ba4350806884276fffdd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84bfc22f96891b3f0546d9a6988b8f1d') in 0.010189 seconds 
   Import took 0.015274 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
