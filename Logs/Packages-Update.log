@@ -37,3 +37,11 @@ The following packages were added:
   com.unity.modules.wind@1.0.0
   com.unity.modules.xr@1.0.0
   com.unity.timeline@1.4.8
+
+=== Tue Nov 28 13:38:43 2023
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.mathematics@1.2.6

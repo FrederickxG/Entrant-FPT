@@ -33,7 +33,7 @@ public class EnemyActions : MonoBehaviour
         isAttacking = true;
 
         // Deal damage to the player
-        player.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+        player.GetComponent<PlayerMechanics>().TakeDamage(attackDamage);
 
         // Wait for a few seconds before attacking again
         yield return new WaitForSeconds(2.0f);
