@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1908723630775134798}
   - component: {fileID: 700004813943915083}
   - component: {fileID: 1697467647217105393}
+  - component: {fileID: 8007520785662401128}
   m_Layer: 0
   m_Name: Enemy 01
   m_TagString: Untagged
@@ -123,11 +124,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1454231346859089055}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 215cb64d27811bd41994f2fa4c80c8f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ead0866c9f62ba4eb713654a8ae5818, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  speed: 2
-  attackRange: 1
+  range: 10
+  attackInterval: 2
+  attackDistance: 2
   attackDamage: 10
-  isAttacking: 0
+  moveSpeed: 3
+--- !u!114 &8007520785662401128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454231346859089055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197c37cd7643d52478eedc78c420d654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 35
