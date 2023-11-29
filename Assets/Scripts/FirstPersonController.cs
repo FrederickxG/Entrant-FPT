@@ -64,6 +64,9 @@ namespace StarterAssets
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
 
+		[SerializeField] private AudioClip _walkingSoundEffect; // reference to the walking sound effect AudioClip
+		private AudioSource _audioSource; // reference to the AudioSource component
+
 	
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 		private PlayerInput _playerInput;
@@ -97,6 +100,7 @@ namespace StarterAssets
 
 		private void Start()
 		{
+            _audioSource = GetComponent<AudioSource>();
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
@@ -153,6 +157,18 @@ namespace StarterAssets
 
 		private void Move()
 		{
+
+			// play walking sound effect based on movement
+			if (!_audioSource.isPlaying && _speed > 0.0f)
+			{
+				_audioSource.clip = _walkingSoundEffect;
+				_audioSource.Play();
+			}
+			else if (_audioSource.isPlaying && _speed == 0.0f)
+			{
+				_audioSource.Stop();
+			}
+
 			// set target speed based on move speed, sprint speed and if sprint is pressed
 			float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
@@ -266,3 +282,4 @@ namespace StarterAssets
 		}
 	}
 }
+

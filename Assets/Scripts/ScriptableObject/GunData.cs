@@ -9,9 +9,10 @@ public class GunData : ScriptableObject
     [Header("Info")]
     public new string name;
 
-     [Header("Shooting")]
+    [Header("Shooting")]
     public float damage;
     public float maxDistance;
+    public AudioClip shootSound; // Add this line
 
     [Header("Reloading")]
     public int currentAmmo;
@@ -20,5 +21,4 @@ public class GunData : ScriptableObject
     public float reloadTime;
     [HideInInspector]
     public bool reloading;
-
 }
