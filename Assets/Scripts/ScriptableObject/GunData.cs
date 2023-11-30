@@ -12,12 +12,12 @@ public class GunData : ScriptableObject
     [Header("Shooting")]
     public float damage;
     public float maxDistance;
-    public AudioClip shootSound; // Add this line
+    public AudioClip shootSound; 
 
     [Header("Reloading")]
     public int currentAmmo;
     public int magSize;
-    public float fireRate;
+     [Tooltip("In RPM")] public float fireRate;
     public float reloadTime;
     [HideInInspector]
     public bool reloading;

@@ -9,6 +9,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private GunData gunData;
     [SerializeField] private Transform muzzle;
 
+
     float timeSinceLastShot;
 
     private void Start()
@@ -17,12 +18,11 @@ public class Gun : MonoBehaviour
         PlayerShoot.reloadInput += StartReload;
     }
 
-    public void StartReload()
-    {
-        if (!gunData.reloading)
-        {
+    private void OnDisable() => gunData.reloading = false;
+
+    public void StartReload() {
+        if (!gunData.reloading && this.gameObject.activeSelf)
             StartCoroutine(Reload());
-        }
     }
 
     private IEnumerator Reload()
@@ -38,7 +38,7 @@ public class Gun : MonoBehaviour
 
     private bool CanShoot() => !gunData.reloading && timeSinceLastShot > 1f / (gunData.fireRate / 6f);
 
-    public void Shoot()
+    private void Shoot()
     {
         if (gunData.currentAmmo > 0)
         {
@@ -56,6 +56,7 @@ public class Gun : MonoBehaviour
                 }
             }
         }
+
     }
 
     private void Update()

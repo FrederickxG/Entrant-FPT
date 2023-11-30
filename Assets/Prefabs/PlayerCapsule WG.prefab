@@ -153,10 +153,8 @@ GameObject:
   - component: {fileID: 2628516421043055391}
   - component: {fileID: 8373438237441547667}
   - component: {fileID: 5231549556855308771}
-  - component: {fileID: 5417394297457511718}
   - component: {fileID: 3925149107476821782}
   - component: {fileID: 4543758991562260053}
-  - component: {fileID: 4543758991562260052}
   - component: {fileID: 4543758991562260045}
   m_Layer: 8
   m_Name: PlayerCapsule WG
@@ -228,6 +226,7 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 462790695221164212}
   TopClamp: 89
   BottomClamp: -89
+  _walkingSoundEffect: {fileID: 0}
 --- !u!114 &2628516421043055391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,20 +362,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &5417394297457511718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5231549556855308783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb4b48568ff0f00439645207c75b38e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
 --- !u!114 &3925149107476821782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,20 +386,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b441a6c3d83fcc3469f7ee3b076f3e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4543758991562260052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5231549556855308783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb4b48568ff0f00439645207c75b38e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 100
 --- !u!114 &4543758991562260045
 MonoBehaviour:
   m_ObjectHideFlags: 0

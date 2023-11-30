@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 5.67, y: -1.9, z: -216.6}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 191.29999, y: -129.15}
+  m_AnchoredPosition: {x: 194.3, y: -129.15}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &83692138
@@ -308,7 +308,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 5.67, y: 173.92, z: -215.4}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -171.09999, y: -129.15}
+  m_AnchoredPosition: {x: -172.3, y: -129.15}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &240699796
@@ -594,7 +594,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -189.16, y: -260.34}
+  m_AnchoredPosition: {x: -196.8, y: -260.34}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &915760191
@@ -700,6 +700,8 @@ MonoBehaviour:
 
     -Gunshot
     & walking Sfx
+
+    -Health % display
 
 
 
@@ -1815,7 +1817,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 177.5, y: -260.34}
+  m_AnchoredPosition: {x: 180.7, y: -260.34}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1669683573
