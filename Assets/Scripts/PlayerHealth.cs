@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 100;
@@ -20,9 +19,13 @@ public class PlayerHealth : MonoBehaviour
             if (currentHealth <= 0)
             {
                 // Player has died
+                GameOver();
             }
         }
-}
 
-    
-    
+     void GameOver()
+     {
+         Time.timeScale = 0; // Stops the game
+         Debug.Log("Game Over"); // Prints Game Over in the console
+     }
+}

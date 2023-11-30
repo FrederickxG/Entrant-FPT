@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class TitleScreen : MonoBehaviour
 {
     
-    public string TestingGrounds;
+    public string Manor;
 
     public void StartGame()
     {
-        SceneManager.LoadScene("TestingGrounds");
+        SceneManager.LoadScene("Manor");
     }
 
     public void Quit()
