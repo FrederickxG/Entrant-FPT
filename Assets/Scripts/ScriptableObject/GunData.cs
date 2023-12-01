@@ -17,8 +17,10 @@ public class GunData : ScriptableObject
     [Header("Reloading")]
     public int currentAmmo;
     public int magSize;
-     [Tooltip("In RPM")] public float fireRate;
+    [Tooltip("In RPM")] public float fireRate;
     public float reloadTime;
     [HideInInspector]
     public bool reloading;
+
+    public const int SixRoundMag = 600;
 }
