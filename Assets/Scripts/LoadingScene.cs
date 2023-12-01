@@ -21,7 +21,7 @@ public class LoadingScene : MonoBehaviour
 
     LoadingScreen.SetActive(true);
 
-    float minLoadTime = 60999999999f; // min time for loading screen to be on screen
+    float minLoadTime = 60f; // min time for loading screen to be on screen
     float startTime = Time.time;
 
     while (!operation.isDone)
