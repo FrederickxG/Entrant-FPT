@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,6 +5,8 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
+
+    public Gun gun;
     public static Action shootInput;
     public static Action reloadInput;
 
@@ -13,6 +14,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
             shootInput?.Invoke();

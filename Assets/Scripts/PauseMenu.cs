@@ -1,55 +1,75 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static bool gameIsPaused = false;
-    public GameObject pauseMenuUI;
-    public CanvasGroup pauseMenuCanvasGroup;
 
-    private void Update()
+    public GameObject pauseMenu;
+    public GameObject gameObjectToNotDestroy;
+
+    public static bool isPaused;
+    private bool isFirstTime = true;
+
+    // Start is called before the first frame update
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+       pauseMenu.SetActive(false);
+        DontDestroyOnLoad(gameObjectToNotDestroy); // Add this line to prevent the specified game object from being destroyed on scene load
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(isFirstTime)
         {
-            if (gameIsPaused)
+            ResumeGame();
+            isFirstTime = false;
+        }
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            if(isPaused)
             {
-                Resume();
+                ResumeGame();
             }
             else
             {
-                Pause();
+                PauseGame();
             }
         }
     }
 
-   public void Resume()
-{
-    pauseMenuUI.SetActive(false);
+   public void PauseGame()
+     {
+    pauseMenu.SetActive(true);
+    Time.timeScale = 0f;
+    isPaused = true;
+
+    Cursor.lockState = CursorLockMode.None;
+    Cursor.visible = true;
+     }
+
+    public void ResumeGame()
+     {
+    pauseMenu.SetActive(false);
     Time.timeScale = 1f;
-    gameIsPaused = false;
-}
+    isPaused = false;
 
-    public void Pause()
-    {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        gameIsPaused = true;
-
-        // Disable UI input module to make the buttons unresponsive
-        pauseMenuCanvasGroup.interactable = false;
-        pauseMenuCanvasGroup.blocksRaycasts = false;
-    }
-
-    public void LoadMenu()
-    {
+    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.visible = false;
+     }
+     public void GoToMainMenu()
+     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
-    }
+        SceneManager.LoadScene("TitleScreen");
+     }
 
-    public void Restart()
-    {
+     public void Restart()
+     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Manor");
-    }
+      
+     }
 }

@@ -135,6 +135,7 @@ namespace StarterAssets
 
 		private void CameraRotation()
 		{
+			if(!PauseMenu.isPaused)
 			// if there is an input
 			if (_input.look.sqrMagnitude >= _threshold)
 			{

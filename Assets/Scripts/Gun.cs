@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +8,6 @@ public class Gun : MonoBehaviour
     [SerializeField] private GunData gunData;
     [SerializeField] private Transform muzzle;
 
-
     float timeSinceLastShot;
 
     private void Start()
@@ -17,7 +15,7 @@ public class Gun : MonoBehaviour
         PlayerShoot.shootInput += Shoot;
         PlayerShoot.reloadInput += StartReload;
 
-       //sets initial ammo
+        //sets initial ammo
         gunData.currentAmmo = 6;
     }
 
@@ -75,4 +73,3 @@ public class Gun : MonoBehaviour
     }
 
 }
-
