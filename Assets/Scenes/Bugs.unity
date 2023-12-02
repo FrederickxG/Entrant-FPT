@@ -1089,11 +1089,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '-Ammo tracker counts by mutiples of 6 once ammo says "39" that''s 6/6
-    bullets
+  m_text: '-Aiming is a bit stuttery when doing slow movement
 
-
-    -Aiming is a bit stuttery when doing slow movement'
+    -Pause menu buttons
+    do not work'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f186868620103449822a234c371f8ef, type: 2}
   m_sharedMaterial: {fileID: 8530920090350918519, guid: 2f186868620103449822a234c371f8ef,

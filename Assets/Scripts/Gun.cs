@@ -16,6 +16,9 @@ public class Gun : MonoBehaviour
     {
         PlayerShoot.shootInput += Shoot;
         PlayerShoot.reloadInput += StartReload;
+
+       //sets initial ammo
+        gunData.currentAmmo = 6;
     }
 
     private void OnDisable() => gunData.reloading = false;

@@ -555,10 +555,10 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
@@ -918,34 +918,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '-Main menu revamped
-
-    -Working gun mechanic (virtual bullets)
-
-    -Added
-    shoot & reload controls (Help)
-
-    -Manor horde rush Gamemode (Beta)
-
-    -Gunshot
-    & walking Sfx
-
-    -Health % display
-
-    -Added loading screen
-
-    -Added ammo
-    tracker (beta)
-
-    -Added Bug Log
-
-    -Added gun sway
-
-
-
-
-
-'
+  m_text: "-Added loading screen\n-ammo tracker (fixed)\n-Added Bug Log\n-Added gun
+    sway\n-fixed gun hold to fire\n-Added GameOver screen\n-Gun always starts with
+    6 ammo \n-Added pause menu (Beta)\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f186868620103449822a234c371f8ef, type: 2}
   m_sharedMaterial: {fileID: 8530920090350918519, guid: 2f186868620103449822a234c371f8ef,
@@ -1726,7 +1701,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Update Log V-0.7
+  m_text: Update Log V-0.8
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd22c722b23c2bd4fb63504352f954de, type: 2}
   m_sharedMaterial: {fileID: 2851641717062925049, guid: dd22c722b23c2bd4fb63504352f954de,
