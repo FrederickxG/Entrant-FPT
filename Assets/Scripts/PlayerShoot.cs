@@ -13,8 +13,6 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
-     if(!PauseMenu.isPaused)
-     {
         if (Input.GetMouseButtonDown(0))
         {
             shootInput?.Invoke();
@@ -26,6 +24,5 @@ public class PlayerShoot : MonoBehaviour
             reloadInput?.Invoke();
             
         }
-     }
     }
 }

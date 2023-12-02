@@ -804,7 +804,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -814,8 +814,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: f21d57e617f64b04aa71d66b848300a2,
-      type: 3}
+    m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -1092,8 +1091,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '-Aiming is a bit stuttery when doing slow movement
 
-    -When restart
-    is pressed on game over screen your sent back to level but level does not start'
+    -Pause menu buttons
+    do not work'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f186868620103449822a234c371f8ef, type: 2}
   m_sharedMaterial: {fileID: 8530920090350918519, guid: 2f186868620103449822a234c371f8ef,
@@ -1280,7 +1279,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.16078432, g: 0.16078432, b: 0.16078432, a: 0}
+  m_BackGroundColor: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
