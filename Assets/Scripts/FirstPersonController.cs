@@ -135,6 +135,9 @@ namespace StarterAssets
 
 		private void CameraRotation()
 		{
+
+			if(!PauseMenu.isPaused)
+			{
 			// if there is an input
 			if (_input.look.sqrMagnitude >= _threshold)
 			{
@@ -152,6 +155,7 @@ namespace StarterAssets
 
 				// rotate the player left and right
 				transform.Rotate(Vector3.up * _rotationVelocity);
+			}
 			}
 		}
 
