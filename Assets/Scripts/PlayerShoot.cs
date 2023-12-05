@@ -15,6 +15,7 @@ public class PlayerShoot : MonoBehaviour
     private void Update()
     {
 
+      // takes input for wether player is press on mouse button or reload key to invoke the inputs
         if (Input.GetMouseButtonDown(0))
         {
             shootInput?.Invoke();

@@ -19,16 +19,16 @@ public class LoadingScene : MonoBehaviour
 
     AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
 
-    LoadingScreen.SetActive(true);
+    LoadingScreen.SetActive(true); //activates the load screen
 
     float minLoadTime = 60f; // min time for loading screen to be on screen
     float startTime = Time.time;
 
     while (!operation.isDone)
     {
-        float progressValue = Mathf.Clamp01(operation.progress / 0.9f);
+        float progressValue = Mathf.Clamp01(operation.progress / 0.9f); // speed in which it loads
 
-        LoadingBarFill.fillAmount = progressValue;
+        LoadingBarFill.fillAmount = progressValue; //fills bar as loads 
 
         yield return null;
     }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GunParent : MonoBehaviour
 {
+    // this was made in attempt to stop the error
     public GameObject gunPrefab;
     private GameObject gunInstance;
 

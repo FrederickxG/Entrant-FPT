@@ -12,6 +12,7 @@ public class Gun : MonoBehaviour
 
     private void Start()
     {
+        // shoot and reload input 
         PlayerShoot.shootInput += Shoot;
         PlayerShoot.reloadInput += StartReload;
 
@@ -23,16 +24,16 @@ public class Gun : MonoBehaviour
 
     public void StartReload() {
         if (!gunData.reloading && this.gameObject.activeSelf)
-            StartCoroutine(Reload());
+            StartCoroutine(Reload());//starts reload time
     }
 
-    private IEnumerator Reload()
+    private IEnumerator Reload() // reload method
     {
-        gunData.reloading = true;
+        gunData.reloading = true; 
 
-        yield return new WaitForSeconds(gunData.reloadTime);
+        yield return new WaitForSeconds(gunData.reloadTime); 
 
-        gunData.currentAmmo = gunData.magSize;
+        gunData.currentAmmo = gunData.magSize; 
 
         gunData.reloading = false;
     }
@@ -45,10 +46,10 @@ public class Gun : MonoBehaviour
         {
             if (CanShoot())
             {
-                AudioSource.PlayClipAtPoint(gunData.shootSound, muzzle.position, 1f);
-                if (Physics.Raycast(muzzle.position, transform.forward, out RaycastHit hitInfo, gunData.maxDistance))
+                AudioSource.PlayClipAtPoint(gunData.shootSound, muzzle.position, 1f); //plays gun audio
+                if (Physics.Raycast(muzzle.position, transform.forward, out RaycastHit hitInfo, gunData.maxDistance)) // set raycast for virtual bullet
                 {
-                    IDamageable damageable = hitInfo.transform.GetComponent<IDamageable>();
+                    IDamageable damageable = hitInfo.transform.GetComponent<IDamageable>();// damage info
                     damageable?.TakeDamage(gunData.damage);
 
                     gunData.currentAmmo--;

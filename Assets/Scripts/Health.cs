@@ -15,20 +15,20 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth = maxHealth; // sets curren health to max health on start up
     }
 
     private void Update()
     {
-        if (currentHealth > maxHealth) currentHealth = maxHealth;
+        if (currentHealth > maxHealth) currentHealth = maxHealth; // if the current health is more than the max health set current to max 
 
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        currentHealth -= damage; // damage taking tracking to curent health
         currentHealth = Mathf.Max(currentHealth, 0); // Ensure health never goes below 0
-        healthText.text = "Health: " + currentHealth + "%";
+        healthText.text = "Health: " + currentHealth + "%"; // updates health text
 
         if (currentHealth <= 0)
         {

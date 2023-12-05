@@ -15,8 +15,9 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // on start pause menu is not activated 
        pauseMenu.SetActive(false);
-        DontDestroyOnLoad(gameObjectToNotDestroy); // Add this line to prevent the specified game object from being destroyed on scene load
+       DontDestroyOnLoad(gameObjectToNotDestroy); //supposed to prevent the specified game object from being destroyed on scene load
     }
 
     // Update is called once per frame
@@ -43,21 +44,23 @@ public class PauseMenu : MonoBehaviour
 
    public void PauseGame()
      {
+    // activates the pause menu and freezes game 
     pauseMenu.SetActive(true);
     Time.timeScale = 0f;
     isPaused = true;
 
-    Cursor.lockState = CursorLockMode.None;
+    Cursor.lockState = CursorLockMode.None; // unlocks curosr when paused
     Cursor.visible = true;
      }
 
     public void ResumeGame()
      {
+    // deactivate the pause screen and unfreezes game 
     pauseMenu.SetActive(false);
     Time.timeScale = 1f;
     isPaused = false;
 
-    Cursor.lockState = CursorLockMode.Locked;
+    Cursor.lockState = CursorLockMode.Locked; //locks cursor when game isnt paused
     Cursor.visible = false;
      }
      public void GoToMainMenu()
