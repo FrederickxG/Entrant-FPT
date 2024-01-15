@@ -12,6 +12,11 @@ public class Gun : MonoBehaviour
 
     private void Start()
     {
+           if (gunData == null)
+      {
+        Debug.LogError("gunData is null!");
+        return;
+    }
         // shoot and reload input 
         PlayerShoot.shootInput += Shoot;
         PlayerShoot.reloadInput += StartReload;
@@ -20,7 +25,11 @@ public class Gun : MonoBehaviour
         gunData.currentAmmo = 6;
     }
 
-    private void OnDisable() => gunData.reloading = false;
+     private void OnDisable() {
+    PlayerShoot.shootInput -= Shoot;
+    PlayerShoot.reloadInput -= StartReload;
+    gunData.reloading = false;
+     }
 
     public void StartReload() {
         if (!gunData.reloading && this.gameObject.activeSelf)

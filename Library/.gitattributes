@@ -1,0 +1,4 @@
+.fileextension filter=lfs diff=lfs merge=lfs -text
+ArtifactDb.file filter=lfs diff=lfs merge=lfs -text
+ArtifactDB.file filter=lfs diff=lfs merge=lfs -text
+ArtifactDb filter=lfs diff=lfs merge=lfs -text

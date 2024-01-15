@@ -39,4 +39,9 @@ public class TitleScreen : MonoBehaviour
     {
         SceneManager.LoadScene("Bugs");
     }
+
+     public void LvlSelect()
+    {
+        SceneManager.LoadScene("LvlSelect");
+    }
 }
