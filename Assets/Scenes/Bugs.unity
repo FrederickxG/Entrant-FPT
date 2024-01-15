@@ -1092,7 +1092,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: '-Aiming is a bit stuttery when doing slow movement
 
-    -'
+    - V illage texture
+    wont load sometimes on continue/level select'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f186868620103449822a234c371f8ef, type: 2}
   m_sharedMaterial: {fileID: 8530920090350918519, guid: 2f186868620103449822a234c371f8ef,
