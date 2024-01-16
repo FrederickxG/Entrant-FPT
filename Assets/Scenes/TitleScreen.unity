@@ -921,7 +921,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "-Fixed reloading issues \n-level select (WIP)\n-Level 1 Base complete\n-Added
     music to main menu\n-added damage indicator\n-added hurt sounds(3)\n-added lvl
-    1 boss music\n\n\n\n\n\n"
+    1 boss music\n-Village Lvl 2 (WIP)\n-Story info layout updated\n-Game over screen
+    updated\n\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f186868620103449822a234c371f8ef, type: 2}
   m_sharedMaterial: {fileID: 8530920090350918519, guid: 2f186868620103449822a234c371f8ef,
