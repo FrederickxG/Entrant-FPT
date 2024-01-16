@@ -8,16 +8,16 @@ public class TitleScreen : MonoBehaviour
 {
     
     public string Manor;
-
+   
     public void StartGame()
-    {
+   {
         SceneManager.LoadScene("Manor");
     }
 
     public void Quit()
     {
-         Application.Quit();
-         Debug.Log("Player has quit");
+        Application.Quit();
+        Debug.Log("Player has quit");
     }
 
      public void InfoScreen()
@@ -26,22 +26,22 @@ public class TitleScreen : MonoBehaviour
     }
 
      public void HelpScreen()
-    {
+   {
         SceneManager.LoadScene("HelpMenu");
     }
 
      public void Return()
-    {
+   {
         SceneManager.LoadScene("TitleScreen");
     }
 
      public void Bugs()
-    {
+   {
         SceneManager.LoadScene("Bugs");
     }
 
      public void LvlSelect()
-    {
+   {
         SceneManager.LoadScene("LvlSelect");
     }
 }
