@@ -588,7 +588,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -920,7 +920,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "-Fixed reloading issues \n-level select (WIP)\n-Level 1 Base complete\n-Added
-    music to main menu\n\n\n\n\n\n"
+    music to main menu\n-added damage indicator\n-added hurt sounds(3)\n-added lvl
+    1 boss music\n\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f186868620103449822a234c371f8ef, type: 2}
   m_sharedMaterial: {fileID: 8530920090350918519, guid: 2f186868620103449822a234c371f8ef,
@@ -2835,11 +2836,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4ba4ecf1f9bbe794298020bdd53b2f51, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 41cdf49cc8e57d84994d49b60d2fdd5c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.742
-  m_Pitch: 1
-  Loop: 0
+  m_Volume: 0.355
+  m_Pitch: 0.54
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2933,7 +2934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f303948c1416514dbf7f4429e6d8115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 8300000, guid: 4ba4ecf1f9bbe794298020bdd53b2f51, type: 3}
+  music: {fileID: 8300000, guid: 41cdf49cc8e57d84994d49b60d2fdd5c, type: 3}
   audioSource: {fileID: 1746658100}
 --- !u!4 &1746658102
 Transform:

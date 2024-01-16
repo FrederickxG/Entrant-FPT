@@ -9,6 +9,7 @@ public class InteractTest : MonoBehaviour, IInteractable
    public GameObject Boss;
    public GameObject Clipboard;
    public int interactionType;
+   public AudioSource bossAudioSource;
 
    
    public void Interact() 
@@ -22,6 +23,7 @@ public class InteractTest : MonoBehaviour, IInteractable
    {
    collect.SetActive(false);
    Boss.SetActive(true);
+   bossAudioSource.Play();
    }
    break;
    case 1:
@@ -36,4 +38,9 @@ public class InteractTest : MonoBehaviour, IInteractable
    break;
     }
    }
+
+   public void StopBossMusic()
+{
+    bossAudioSource.Stop();
+}
 }

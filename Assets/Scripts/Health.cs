@@ -10,8 +10,10 @@ public class Health : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
-
+    public DamageIndicator damageIndicator;
     [SerializeField] private string gameOverSceneName;
+    public AudioSource damageSound;
+    [SerializeField] private AudioClip[] hurtSounds;
 
     private void Start()
     {
@@ -26,9 +28,13 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+
+        damageIndicator.ShowDamageIndicator();
         currentHealth -= damage; // damage taking tracking to curent health
         currentHealth = Mathf.Max(currentHealth, 0); // Ensure health never goes below 0
         healthText.text = "Health: " + currentHealth + "%"; // updates health text
+        damageSound.clip = hurtSounds[Random.Range(0, hurtSounds.Length)];
+        damageSound.Play();
 
         if (currentHealth <= 0)
         {
