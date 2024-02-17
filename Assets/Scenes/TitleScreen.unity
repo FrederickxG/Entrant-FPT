@@ -919,19 +919,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Manor textures revamp
-
-    - Vanatge(WIP)
-
-    -Manor to Vantage Transition
-
-    CENEMATIC(wip)
-
-
-
-
-
-'
+  m_text: "- Manor textures revamp\n- Vanatge pt1 \n-Manor to Vantage Transition\nCENEMATIC(wip)\n-
+    Coms device (Objective & voice lines)\n- sound fx revamp\n- manor boss assest
+    swapped (priest)\n- Freya (cOMS assistant)\n\n\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f186868620103449822a234c371f8ef, type: 2}
   m_sharedMaterial: {fileID: 8530920090350918519, guid: 2f186868620103449822a234c371f8ef,

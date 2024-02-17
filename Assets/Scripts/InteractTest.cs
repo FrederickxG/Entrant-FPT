@@ -10,6 +10,8 @@ public class InteractTest : MonoBehaviour, IInteractable
    public GameObject Clipboard;
    public int interactionType;
    public AudioSource bossAudioSource;
+   public GameObject commsDevice;
+   public AudioClip commsAudioClip;
 
    
    public void Interact() 
@@ -19,12 +21,10 @@ public class InteractTest : MonoBehaviour, IInteractable
     {
 
     case 0:
-   if (gameObject == collect)
-   {
-   collect.SetActive(false);
-   Boss.SetActive(true);
-   bossAudioSource.Play();
-   }
+    if (gameObject == collect)
+        {
+      StartCoroutine(ActivateCommsDeviceAndSpawnBoss());
+       }
    break;
    case 1:
    if (gameObject == Clipboard)
@@ -39,6 +39,26 @@ public class InteractTest : MonoBehaviour, IInteractable
     }
    }
 
+  IEnumerator ActivateCommsDeviceAndSpawnBoss()
+    {
+        // Activate comms device and play audio clip
+        commsDevice.SetActive(true);
+        AudioSource commsAudioSource = commsDevice.GetComponent<AudioSource>();
+        commsAudioSource.clip = commsAudioClip;
+        commsAudioSource.Play();
+
+        // Wait for audio clip to finish playing
+        yield return new WaitForSeconds(commsAudioClip.length);
+
+        // Deactivate comms device
+        commsDevice.SetActive(false);
+
+        // Spawn boss and play boss music
+        collect.SetActive(false);
+        Boss.SetActive(true);
+        bossAudioSource.Play();
+    }
+    
    public void StopBossMusic()
 {
     bossAudioSource.Stop();

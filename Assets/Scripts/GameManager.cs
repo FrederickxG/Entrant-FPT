@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour
 {
 
      public GameObject freya; 
-     public AudioSource audioSource;
+     public AudioSource audioSource;   
+
 
     // Start is called before the first frame update
  void Start()
@@ -23,4 +24,5 @@ void Update()
         freya.SetActive(false);
     }
 }
+
 }
