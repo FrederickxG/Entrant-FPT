@@ -12,6 +12,7 @@ public class InteractTest : MonoBehaviour, IInteractable
    public AudioSource bossAudioSource;
    public GameObject commsDevice;
    public AudioClip commsAudioClip;
+   public GameObject Door;
 
    
    public void Interact() 
@@ -26,14 +27,22 @@ public class InteractTest : MonoBehaviour, IInteractable
       StartCoroutine(ActivateCommsDeviceAndSpawnBoss());
        }
    break;
+
    case 1:
    if (gameObject == Clipboard)
    {
     Clipboard.SetActive(false);
     SceneManager.LoadScene("Clipboard");
    }
+    break;
 
+    case 2:
+   if (gameObject == Door)
+   {
+    SceneManager.LoadScene("TitleScreen");
+   }
    break;
+
    default:
    break;
     }

@@ -2,36 +2,41 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PauseMenu : MonoBehaviour
 {
-
     public GameObject pauseMenu;
     public GameObject gameObjectToNotDestroy;
+    public EventSystem eventSystem; // Reference to the EventSystem
 
     public static bool isPaused;
     private bool isFirstTime = true;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObjectToNotDestroy);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        // on start pause menu is not activated 
-       pauseMenu.SetActive(false);
-       DontDestroyOnLoad(gameObjectToNotDestroy); //supposed to prevent the specified game object from being destroyed on scene load
+        // Deactivate the pause menu on start
+        pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(isFirstTime)
+        if (isFirstTime)
         {
             ResumeGame();
             isFirstTime = false;
         }
 
-        if(Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            if(isPaused)
+            if (isPaused)
             {
                 ResumeGame();
             }
@@ -42,37 +47,41 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-   public void PauseGame()
-     {
-    // activates the pause menu and freezes game 
-    pauseMenu.SetActive(true);
-    Time.timeScale = 0f;
-    isPaused = true;
+    public void PauseGame()
+    {
+        // Activate the pause menu and freeze the game
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        isPaused = true;
 
-    Cursor.lockState = CursorLockMode.None; // unlocks curosr when paused
-    Cursor.visible = true;
-     }
+        Cursor.lockState = CursorLockMode.None; // Unlock cursor when paused
+        Cursor.visible = true;
+
+        // Set the EventSystem's current selected object to the first selectable button in the pause menu
+        eventSystem.SetSelectedGameObject(pauseMenu.GetComponentInChildren<UnityEngine.UI.Button>().gameObject);
+    }
 
     public void ResumeGame()
-     {
-    // deactivate the pause screen and unfreezes game 
-    pauseMenu.SetActive(false);
-    Time.timeScale = 1f;
-    isPaused = false;
+    {
+        // Deactivate the pause menu and unfreeze the game
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        isPaused = false;
 
-    Cursor.lockState = CursorLockMode.Locked; //locks cursor when game isnt paused
-    Cursor.visible = false;
-     }
-     public void GoToMainMenu()
-     {
+        Cursor.lockState = CursorLockMode.Locked; // Lock cursor when game isn't paused
+        Cursor.visible = false;
+    }
+
+    public void GoToMainMenu()
+    {
         Time.timeScale = 1f;
         SceneManager.LoadScene("TitleScreen");
-     }
+    }
 
-     public void Restart()
-     {
+    public void Restart()
+    {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Manor");
-      
-     }
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
+    }
 }

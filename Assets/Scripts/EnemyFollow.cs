@@ -9,12 +9,11 @@ public class EnemyFollow : MonoBehaviour
     public float attackInterval = 2f;
     public float attackDistance = 2f;
     public int attackDamage = 10;
-    public float randomMovementRange = 5f; // Range within which the enemy can randomly move
 
-    private bool isPlayerInRange = false;
     private float timer;
     private bool canAttack;
     private Health health;
+    private Vector3 groundNormal; // Stores the normal of the ground surface
 
     private void Start()
     {
@@ -28,15 +27,8 @@ public class EnemyFollow : MonoBehaviour
         // Calculate the distance between the enemy and the player
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        if (!isPlayerInRange)
-        {
-            // Check if the player is within the detection range
-            if (distanceToPlayer <= detectionRange)
-            {
-                isPlayerInRange = true;
-            }
-        }
-        else
+        // Check if the player is within the detection range
+        if (distanceToPlayer <= detectionRange)
         {
             // Move the enemy towards the player
             transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
