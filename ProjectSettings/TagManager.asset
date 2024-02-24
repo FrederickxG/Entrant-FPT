@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - VillageEntrance
   - ManorDoor
+  - Door
   layers:
   - Default
   - TransparentFX

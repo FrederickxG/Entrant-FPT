@@ -39,6 +39,7 @@ public class InteractTest : MonoBehaviour, IInteractable
     case 2:
    if (gameObject == Door)
    {
+    Debug.Log("Door is working");
     SceneManager.LoadScene("TitleScreen");
    }
    break;
