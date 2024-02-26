@@ -13,6 +13,7 @@ public class InteractTest : MonoBehaviour, IInteractable
    public GameObject commsDevice;
    public AudioClip commsAudioClip;
    public GameObject Door;
+   public AudioClip adrikVL;
 
    
    public void Interact() 
@@ -39,8 +40,7 @@ public class InteractTest : MonoBehaviour, IInteractable
     case 2:
    if (gameObject == Door)
    {
-    Debug.Log("Door is working");
-    SceneManager.LoadScene("TitleScreen");
+     StartCoroutine(PlayAdrikVLAudioAndSwitchScene());
    }
    break;
 
@@ -67,6 +67,18 @@ public class InteractTest : MonoBehaviour, IInteractable
         collect.SetActive(false);
         Boss.SetActive(true);
         bossAudioSource.Play();
+    }
+
+     IEnumerator PlayAdrikVLAudioAndSwitchScene()
+    {
+        // Play the AdrikVL audio clip
+        AudioSource.PlayClipAtPoint(adrikVL, transform.position);
+
+        // Wait for audio clip to finish playing
+        yield return new WaitForSeconds(adrikVL.length);
+
+        // Switch scene
+        SceneManager.LoadScene("TitleScreen");
     }
     
    public void StopBossMusic()
