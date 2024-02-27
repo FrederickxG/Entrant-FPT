@@ -7,7 +7,7 @@ public class Investigation : MonoBehaviour
 {
   public void Continue()
   {
-    SceneManager.LoadScene("Village");
+    SceneManager.LoadScene("Cene");
   }
 
    public void Quit()

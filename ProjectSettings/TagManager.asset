@@ -9,6 +9,7 @@ TagManager:
   - VillageEntrance
   - ManorDoor
   - Door
+  - Car
   layers:
   - Default
   - TransparentFX

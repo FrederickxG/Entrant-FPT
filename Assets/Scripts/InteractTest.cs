@@ -15,74 +15,68 @@ public class InteractTest : MonoBehaviour, IInteractable
    public GameObject Door;
    public AudioClip adrikVL;
 
-   
    public void Interact() 
    {
-
-    switch (interactionType)
-    {
-
-    case 0:
-    if (gameObject == collect)
-        {
-      StartCoroutine(ActivateCommsDeviceAndSpawnBoss());
+       switch (interactionType)
+       {
+           case 0:
+               if (gameObject == collect)
+               {
+                   StartCoroutine(ActivateCommsDeviceAndSpawnBoss());
+               }
+               break;
+           case 1:
+               if (gameObject == Clipboard)
+               {
+                   Clipboard.SetActive(false);
+                   SceneManager.LoadScene("Clipboard");
+               }
+               break;
+           case 2:
+               if (gameObject == Door)
+               {
+                   StartCoroutine(PlayAdrikVLAudioAndSwitchScene());
+               }
+               break;
+           default:
+               break;
        }
-   break;
-
-   case 1:
-   if (gameObject == Clipboard)
+   }
+   
+   IEnumerator PlayAdrikVLAudioAndSwitchScene()
    {
-    Clipboard.SetActive(false);
-    SceneManager.LoadScene("Clipboard");
-   }
-    break;
+       // Play the AdrikVL audio clip
+       AudioSource.PlayClipAtPoint(adrikVL, transform.position);
+       
+       // Wait for the audio clip to finish playing
+       yield return new WaitForSeconds(adrikVL.length);
 
-    case 2:
-   if (gameObject == Door)
+       // Load the desired scene
+       SceneManager.LoadScene("Knocked");
+   }
+
+   IEnumerator ActivateCommsDeviceAndSpawnBoss()
    {
-     StartCoroutine(PlayAdrikVLAudioAndSwitchScene());
+       // Activate comms device and play audio clip
+       commsDevice.SetActive(true);
+       AudioSource commsAudioSource = commsDevice.GetComponent<AudioSource>();
+       commsAudioSource.clip = commsAudioClip;
+       commsAudioSource.Play();
+
+       // Wait for audio clip to finish playing
+       yield return new WaitForSeconds(commsAudioClip.length);
+
+       // Deactivate comms device
+       commsDevice.SetActive(false);
+
+       // Spawn boss and play boss music
+       collect.SetActive(false);
+       Boss.SetActive(true);
+       bossAudioSource.Play();
    }
-   break;
 
-   default:
-   break;
-    }
-   }
-
-  IEnumerator ActivateCommsDeviceAndSpawnBoss()
-    {
-        // Activate comms device and play audio clip
-        commsDevice.SetActive(true);
-        AudioSource commsAudioSource = commsDevice.GetComponent<AudioSource>();
-        commsAudioSource.clip = commsAudioClip;
-        commsAudioSource.Play();
-
-        // Wait for audio clip to finish playing
-        yield return new WaitForSeconds(commsAudioClip.length);
-
-        // Deactivate comms device
-        commsDevice.SetActive(false);
-
-        // Spawn boss and play boss music
-        collect.SetActive(false);
-        Boss.SetActive(true);
-        bossAudioSource.Play();
-    }
-
-     IEnumerator PlayAdrikVLAudioAndSwitchScene()
-    {
-        // Play the AdrikVL audio clip
-        AudioSource.PlayClipAtPoint(adrikVL, transform.position);
-
-        // Wait for audio clip to finish playing
-        yield return new WaitForSeconds(adrikVL.length);
-
-        // Switch scene
-        SceneManager.LoadScene("TitleScreen");
-    }
-    
    public void StopBossMusic()
-{
-    bossAudioSource.Stop();
-}
+   {
+       bossAudioSource.Stop();
+   }
 }
