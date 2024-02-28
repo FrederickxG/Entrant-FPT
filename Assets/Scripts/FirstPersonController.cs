@@ -134,27 +134,32 @@ namespace StarterAssets
 		}
 
 		private void CameraRotation()
-		{
-			if(!PauseMenu.isPaused)
-			// if there is an input
-			if (_input.look.sqrMagnitude >= _threshold)
-			{
-				//Don't multiply mouse input by Time.deltaTime
-				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
-				
-				_cinemachineTargetPitch += _input.look.y * RotationSpeed * deltaTimeMultiplier;
-				_rotationVelocity = _input.look.x * RotationSpeed * deltaTimeMultiplier;
+{
+    if (!PauseMenu.isPaused)
+    {
+        // If there is an input
+        if (_input.look.sqrMagnitude >= _threshold)
+        {
+            // Don't multiply mouse input by Time.deltaTime
+            float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 
-				// clamp our pitch rotation
-				_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
+            // Calculate rotation speed based on input magnitude
+            float rotationSpeed = Mathf.Lerp(RotationSpeed, RotationSpeed * _input.look.magnitude, 0.5f);
 
-				// Update Cinemachine camera target pitch
-				CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
+            _cinemachineTargetPitch += _input.look.y * rotationSpeed * deltaTimeMultiplier;
+            _rotationVelocity = _input.look.x * rotationSpeed * deltaTimeMultiplier;
 
-				// rotate the player left and right
-				transform.Rotate(Vector3.up * _rotationVelocity);
-			}
-		}
+            // Clamp our pitch rotation
+            _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
+
+            // Update Cinemachine camera target pitch
+            CinemachineCameraTarget.transform.localRotation = Quaternion.Euler(_cinemachineTargetPitch, 0.0f, 0.0f);
+
+            // Rotate the player left and right
+            transform.Rotate(Vector3.up * _rotationVelocity);
+        }
+    }
+}
 
 		private void Move()
 		{

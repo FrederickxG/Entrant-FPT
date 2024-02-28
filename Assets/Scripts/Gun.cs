@@ -7,42 +7,46 @@ public class Gun : MonoBehaviour
     [Header("References")]
     [SerializeField] private GunData gunData;
     [SerializeField] private Transform muzzle;
+    [SerializeField] private GameObject muzzleFlash; // Reference to the muzzle flash GameObject
 
     float timeSinceLastShot;
 
     private void Start()
     {
-           if (gunData == null)
-      {
-        Debug.LogError("gunData is null!");
-        return;
-    }
+        if (gunData == null)
+        {
+            Debug.LogError("gunData is null!");
+            return;
+        }
+
         // shoot and reload input 
         PlayerShoot.shootInput += Shoot;
         PlayerShoot.reloadInput += StartReload;
 
-        //sets initial ammo
+        // sets initial ammo
         gunData.currentAmmo = 6;
     }
 
-     private void OnDisable() {
-    PlayerShoot.shootInput -= Shoot;
-    PlayerShoot.reloadInput -= StartReload;
-    gunData.reloading = false;
-     }
+    private void OnDisable()
+    {
+        PlayerShoot.shootInput -= Shoot;
+        PlayerShoot.reloadInput -= StartReload;
+        gunData.reloading = false;
+    }
 
-    public void StartReload() {
+    public void StartReload()
+    {
         if (!gunData.reloading && this.gameObject.activeSelf)
-            StartCoroutine(Reload());//starts reload time
+            StartCoroutine(Reload()); // starts reload time
     }
 
     private IEnumerator Reload() // reload method
     {
-        gunData.reloading = true; 
+        gunData.reloading = true;
 
-        yield return new WaitForSeconds(gunData.reloadTime); 
+        yield return new WaitForSeconds(gunData.reloadTime);
 
-        gunData.currentAmmo = gunData.magSize; 
+        gunData.currentAmmo = gunData.magSize;
 
         gunData.reloading = false;
     }
@@ -55,10 +59,17 @@ public class Gun : MonoBehaviour
         {
             if (CanShoot())
             {
-                AudioSource.PlayClipAtPoint(gunData.shootSound, muzzle.position, 1f); //plays gun audio
+                AudioSource.PlayClipAtPoint(gunData.shootSound, muzzle.position, 1f); // plays gun audio
+
+                // Activate the muzzle flash GameObject
+                if (muzzleFlash != null)
+                {
+                    muzzleFlash.SetActive(true);
+                }
+
                 if (Physics.Raycast(muzzle.position, transform.forward, out RaycastHit hitInfo, gunData.maxDistance)) // set raycast for virtual bullet
                 {
-                    IDamageable damageable = hitInfo.transform.GetComponent<IDamageable>();// damage info
+                    IDamageable damageable = hitInfo.transform.GetComponent<IDamageable>(); // damage info
                     damageable?.TakeDamage(gunData.damage);
 
                     gunData.currentAmmo--;
@@ -79,7 +90,18 @@ public class Gun : MonoBehaviour
 
     private void OnGunShot()
     {
-        
+        // Deactivate the muzzle flash GameObject after a short delay
+        StartCoroutine(DeactivateMuzzleFlash());
     }
 
+    private IEnumerator DeactivateMuzzleFlash()
+    {
+        yield return new WaitForSeconds(0.1f); // Adjust the delay as needed
+
+        // Deactivate the muzzle flash GameObject
+        if (muzzleFlash != null)
+        {
+            muzzleFlash.SetActive(false);
+        }
+    }
 }

@@ -880,6 +880,7 @@ GameObject:
   - component: {fileID: 965686820}
   - component: {fileID: 965686819}
   - component: {fileID: 965686818}
+  - component: {fileID: 965686821}
   m_Layer: 5
   m_Name: Vantage
   m_TagString: Untagged
@@ -1002,6 +1003,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965686816}
   m_CullTransparentMesh: 1
+--- !u!114 &965686821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965686816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c69cfa71a6cb14448a28caf75641b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 4cab88b4737da854a91fcda05300bad0, type: 3}
+  hoverSound: {fileID: 8300000, guid: fcc3d7f79700fc0429328f2d5c7ddbfa, type: 3}
 --- !u!1 &1053740596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,6 +1513,7 @@ GameObject:
   - component: {fileID: 1772078354}
   - component: {fileID: 1772078353}
   - component: {fileID: 1772078352}
+  - component: {fileID: 1772078355}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -1620,6 +1636,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772078350}
   m_CullTransparentMesh: 1
+--- !u!114 &1772078355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772078350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c69cfa71a6cb14448a28caf75641b84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickSound: {fileID: 8300000, guid: 4cab88b4737da854a91fcda05300bad0, type: 3}
+  hoverSound: {fileID: 8300000, guid: fcc3d7f79700fc0429328f2d5c7ddbfa, type: 3}
 --- !u!1 &1888585795
 GameObject:
   m_ObjectHideFlags: 0

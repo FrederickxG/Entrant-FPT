@@ -44,4 +44,9 @@ public class TitleScreen : MonoBehaviour
    {
         SceneManager.LoadScene("LvlSelect");
     }
+
+      public void Character()
+   {
+        SceneManager.LoadScene("Characters");
+    }
 }

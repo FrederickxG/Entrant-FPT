@@ -8150,6 +8150,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a08df360d734c4043b496ce77812d2d6, type: 3}
+--- !u!1 &769792113 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1051038863614362709, guid: 583ac59c1f07f9841a5c111fa0db05b7,
+    type: 3}
+  m_PrefabInstance: {fileID: 885806909}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &777699059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10262,6 +10268,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1051038863614362709, guid: 583ac59c1f07f9841a5c111fa0db05b7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1424545449148781415, guid: 583ac59c1f07f9841a5c111fa0db05b7,
+        type: 3}
+      propertyPath: muzzleFlash
+      value: 
+      objectReference: {fileID: 769792113}
     - target: {fileID: 1868007446834932377, guid: 583ac59c1f07f9841a5c111fa0db05b7,
         type: 3}
       propertyPath: m_PlayOnAwake

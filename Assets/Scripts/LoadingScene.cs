@@ -1,43 +1,42 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LoadingScene : MonoBehaviour
 {
-   public GameObject LoadingScreen;
-   public Image LoadingBarFill;
+    public GameObject LoadingScreen;
+    public Image LoadingBarFill;
+    public AudioClip loadingSoundClip; // Audio clip to play before loading
+    public AudioSource audioSource; // Audio source to play the loading sound
 
-   public void LoadScene(int sceneId)
-   {
-        StartCoroutine(LoadSceneAsync(sceneId));
-   }
-
- IEnumerator LoadSceneAsync(int sceneId)
- {
-
-    AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
-
-    LoadingScreen.SetActive(true); //activates the load screen
-
-    float minLoadTime = 60f; // min time for loading screen to be on screen
-    float startTime = Time.time;
-
-    while (!operation.isDone)
+    public void LoadScene(int sceneId)
     {
-        float progressValue = Mathf.Clamp01(operation.progress / 0.9f); // speed in which it loads
-
-        LoadingBarFill.fillAmount = progressValue; //fills bar as loads 
-
-        yield return null;
+        StartCoroutine(PlayLoadingSoundAndLoadScene(sceneId));
     }
 
-    float timeWaited = Time.time - startTime;
-    if (timeWaited < minLoadTime)
+    IEnumerator PlayLoadingSoundAndLoadScene(int sceneId)
     {
-        yield return new WaitForSeconds(minLoadTime - timeWaited);
+        if (loadingSoundClip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(loadingSoundClip);
+            yield return new WaitForSecondsRealtime(loadingSoundClip.length);
+        }
+
+        // Start loading scene asynchronously
+        yield return StartCoroutine(LoadSceneAsync(sceneId));
     }
- }
-   
+
+    IEnumerator LoadSceneAsync(int sceneId)
+    {
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
+        LoadingScreen.SetActive(true); // Activates the loading screen
+
+        while (!operation.isDone)
+        {
+            float progressValue = Mathf.Clamp01(operation.progress / 0.9f); // Speed at which it loads
+            LoadingBarFill.fillAmount = progressValue; // Fills bar as it loads 
+            yield return null;
+        }
+    }
 }
