@@ -49,4 +49,14 @@ public class TitleScreen : MonoBehaviour
    {
         SceneManager.LoadScene("Characters");
     }
+
+      public void FreyaCH()
+   {
+        SceneManager.LoadScene("Freya");
+    }
+
+    public void PriestCH()
+   {
+        SceneManager.LoadScene("Priest");
+    }
 }
