@@ -59,4 +59,9 @@ public class TitleScreen : MonoBehaviour
    {
         SceneManager.LoadScene("Priest");
     }
+
+     public void AtoCH()
+   {
+        SceneManager.LoadScene("Ato");
+    }
 }

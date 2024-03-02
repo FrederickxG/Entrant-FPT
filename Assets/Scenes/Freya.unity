@@ -150,14 +150,14 @@ RectTransform:
   m_GameObject: {fileID: 165257099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 3, z: 3}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
   m_Children: []
   m_Father: {fileID: 1003728664}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 343.1, y: 253.68}
+  m_AnchoredPosition: {x: 343.1, y: 317.6}
   m_SizeDelta: {x: 559.8, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &165257101
@@ -186,8 +186,8 @@ MonoBehaviour:
     own "being" luckily for you she didn''t start to hate her job but insteads feels
     content with staying by your side '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2f186868620103449822a234c371f8ef, type: 2}
-  m_sharedMaterial: {fileID: 8530920090350918519, guid: 2f186868620103449822a234c371f8ef,
+  m_fontAsset: {fileID: 11400000, guid: 55684882bc0802d4584f21ebf34af314, type: 2}
+  m_sharedMaterial: {fileID: 4423993774632382410, guid: 55684882bc0802d4584f21ebf34af314,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -819,7 +819,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 491.5, y: 411.7}
+  m_AnchoredPosition: {x: 476.4, y: 411.6}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1116699611
@@ -846,8 +846,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 7c51ba39b9dff944b838754bc06db29b, type: 2}
-  m_sharedMaterial: {fileID: -6472958871271087338, guid: 7c51ba39b9dff944b838754bc06db29b,
+  m_fontAsset: {fileID: 11400000, guid: 55684882bc0802d4584f21ebf34af314, type: 2}
+  m_sharedMaterial: {fileID: 4423993774632382410, guid: 55684882bc0802d4584f21ebf34af314,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1181,8 +1181,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
