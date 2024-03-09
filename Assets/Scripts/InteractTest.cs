@@ -1,19 +1,21 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class InteractTest : MonoBehaviour, IInteractable
 {
-   public GameObject collect;
-   public GameObject Boss;
-   public GameObject Clipboard;
-   public int interactionType;
-   public AudioSource bossAudioSource;
-   public GameObject commsDevice;
-   public AudioClip commsAudioClip;
-   public GameObject Door;
-   public AudioClip adrikVL;
+    public GameObject collect;
+    public GameObject Boss;
+    public GameObject Clipboard;
+    public int interactionType;
+    public AudioSource bossAudioSource;
+    public GameObject commsDevice;
+    public AudioClip commsAudioClip;
+    public GameObject Door;
+    public AudioClip adrikVL;
+    public Camera mainCamera;
+    public CameraShaker cameraShaker;
 
    public void Interact() 
    {
@@ -43,17 +45,21 @@ public class InteractTest : MonoBehaviour, IInteractable
        }
    }
    
-   IEnumerator PlayAdrikVLAudioAndSwitchScene()
-   {
-       // Play the AdrikVL audio clip
-       AudioSource.PlayClipAtPoint(adrikVL, transform.position);
-       
-       // Wait for the audio clip to finish playing
-       yield return new WaitForSeconds(adrikVL.length);
+  
+    IEnumerator PlayAdrikVLAudioAndSwitchScene()
+    {
+        // Play the AdrikVL audio clip
+        AudioSource.PlayClipAtPoint(adrikVL, transform.position);
 
-       // Load the desired scene
-       SceneManager.LoadScene("Knocked");
-   }
+        // Wait for the audio clip to finish playing
+        yield return new WaitForSeconds(adrikVL.length);
+
+        // Shake the camera
+        cameraShaker.Shake();
+
+        // Load the desired scene
+        SceneManager.LoadScene("Knocked");
+    }
 
    IEnumerator ActivateCommsDeviceAndSpawnBoss()
    {
