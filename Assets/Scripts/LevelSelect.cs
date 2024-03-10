@@ -15,6 +15,11 @@ public class LevelSelect : MonoBehaviour
     SceneManager.LoadScene("Village");
    }
 
+   public void Level3()
+   {
+    SceneManager.LoadScene("Bunker");
+   }
+
    public void Back()
    {
     SceneManager.LoadScene("TitleScreen");
