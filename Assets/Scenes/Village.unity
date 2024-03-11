@@ -4579,8 +4579,11 @@ MonoBehaviour:
   commsAudioClip: {fileID: 0}
   Door: {fileID: 475916006}
   adrikVL: {fileID: 0}
+  adrikHos: {fileID: 0}
   mainCamera: {fileID: 0}
   cameraShaker: {fileID: 0}
+  enemy: {fileID: 0}
+  card: {fileID: 0}
 --- !u!1 &486430993 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a08df360d734c4043b496ce77812d2d6,
@@ -6310,8 +6313,11 @@ MonoBehaviour:
   commsAudioClip: {fileID: 0}
   Door: {fileID: 594843597}
   adrikVL: {fileID: 8300000, guid: 17d4f799780312647b723ad35af50f16, type: 3}
+  adrikHos: {fileID: 0}
   mainCamera: {fileID: 1073177262}
   cameraShaker: {fileID: 1073177267}
+  enemy: {fileID: 0}
+  card: {fileID: 0}
 --- !u!65 &594843599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23055,8 +23061,11 @@ MonoBehaviour:
   commsAudioClip: {fileID: 8300000, guid: 373861e14e280a247a8de9ef9c75aaf5, type: 3}
   Door: {fileID: 1360037974501239}
   adrikVL: {fileID: 8300000, guid: c5277a2f5e1268d49b79e713f5050bb8, type: 3}
+  adrikHos: {fileID: 0}
   mainCamera: {fileID: 0}
   cameraShaker: {fileID: 0}
+  enemy: {fileID: 0}
+  card: {fileID: 0}
 --- !u!1 &1978842719
 GameObject:
   m_ObjectHideFlags: 0
@@ -25373,8 +25382,11 @@ MonoBehaviour:
   commsAudioClip: {fileID: 0}
   Door: {fileID: 1614276640244671}
   adrikVL: {fileID: 0}
+  adrikHos: {fileID: 0}
   mainCamera: {fileID: 0}
   cameraShaker: {fileID: 0}
+  enemy: {fileID: 0}
+  card: {fileID: 0}
 --- !u!1 &1360037974501239
 GameObject:
   m_ObjectHideFlags: 0

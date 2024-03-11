@@ -10,6 +10,7 @@ TagManager:
   - ManorDoor
   - Door
   - Car
+  - Adrik
   layers:
   - Default
   - TransparentFX

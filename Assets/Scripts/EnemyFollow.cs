@@ -1,5 +1,5 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
 public class EnemyFollow : MonoBehaviour
 {
@@ -9,6 +9,7 @@ public class EnemyFollow : MonoBehaviour
     public float attackInterval = 2f;
     public float attackDistance = 2f;
     public int attackDamage = 10;
+    public LayerMask obstacleLayer; // Layer mask to detect obstacles (e.g., other enemies)
 
     private float timer;
     private bool canAttack;
@@ -30,23 +31,27 @@ public class EnemyFollow : MonoBehaviour
         // Check if the player is within the detection range
         if (distanceToPlayer <= detectionRange)
         {
-            // Move the enemy towards the player
-            transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
-
-            // Rotate the enemy to face the player (optional)
-            Vector3 direction = (player.position - transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
-
-            // Handle attacking behavior
-            timer += Time.deltaTime;
-            if (timer >= attackInterval && canAttack)
+            // Check for obstacles before moving towards the player
+            if (!Physics.Raycast(transform.position, player.position - transform.position, detectionRange, obstacleLayer))
             {
-                canAttack = false;
-                timer = 0f; // Reset the timer
+                // Move the enemy towards the player
+                transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
 
-                // Perform attack animation and damage
-                StartCoroutine(AttackPlayer());
+                // Rotate the enemy to face the player (optional)
+                Vector3 direction = (player.position - transform.position).normalized;
+                Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
+
+                // Handle attacking behavior
+                timer += Time.deltaTime;
+                if (timer >= attackInterval && canAttack)
+                {
+                    canAttack = false;
+                    timer = 0f; // Reset the timer
+
+                    // Perform attack animation and damage
+                    StartCoroutine(AttackPlayer());
+                }
             }
         }
     }
