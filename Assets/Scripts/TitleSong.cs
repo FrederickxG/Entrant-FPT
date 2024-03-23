@@ -32,7 +32,7 @@ public class TitleSong : MonoBehaviour
      void OnSceneLoaded(Scene scene, LoadSceneMode mode)
   {
         // Check if the current scene is one where the music should be stopped
-        if (scene.name == "Manor" || scene.name == "Village")
+        if (scene.name == "Manor" || scene.name == "Village" || scene.name == "Bunker" || scene.name == "Training")
       {
             // Stop the audio source
             audioSource.Stop();
