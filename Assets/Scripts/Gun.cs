@@ -1,5 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
@@ -24,7 +24,7 @@ public class Gun : MonoBehaviour
         PlayerShoot.reloadInput += StartReload;
 
         // sets initial ammo
-        gunData.currentAmmo = 6;
+        gunData.currentAmmo = gunData.magSize;
     }
 
     private void OnDisable()
@@ -36,7 +36,7 @@ public class Gun : MonoBehaviour
 
     public void StartReload()
     {
-        if (!gunData.reloading && this.gameObject.activeSelf)
+        if (!gunData.reloading && gunData.currentAmmo < gunData.magSize)
             StartCoroutine(Reload()); // starts reload time
     }
 
@@ -78,7 +78,6 @@ public class Gun : MonoBehaviour
                 }
             }
         }
-
     }
 
     private void Update()
