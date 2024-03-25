@@ -1047,21 +1047,30 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '- Muzzle flash
+  m_text: '-Night sky added to all levels
 
-    - character info screen(wip)
+    -Flashback level done
 
-    - Button hover sound
+    -lvl 3
+    full outline done
 
-    -
-    button hover pop out
+    -Textures added to lvl 3 outline
 
-    - start button sound
+    -rain added
 
-    - level select updated
+    -rain
+    sounds added
 
-    -
-    lvl 2.5 hospital added
+    -inga & leonis chracter models added
+
+    -skeleton props added
+    to arena + seats
+
+    -Finished/Updated LEVEL 2.5
+
+    - Inga,Adrik,Leonis draft
+    in character screen
+
 
 
 
@@ -1882,7 +1891,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Update Log V-1.7
+  m_text: 'Update Log V-1.9 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd22c722b23c2bd4fb63504352f954de, type: 2}
   m_sharedMaterial: {fileID: 2851641717062925049, guid: dd22c722b23c2bd4fb63504352f954de,

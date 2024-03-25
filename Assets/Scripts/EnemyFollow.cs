@@ -10,11 +10,11 @@ public class EnemyFollow : MonoBehaviour
     public float attackDistance = 2f;
     public int attackDamage = 10;
     public LayerMask obstacleLayer; // Layer mask to detect obstacles (e.g., other enemies)
+    public float spreadRadius = 2f; // Adjust the spread of enemies
 
     private float timer;
     private bool canAttack;
     private Health health;
-    private Vector3 groundNormal; // Stores the normal of the ground surface
 
     private void Start()
     {
@@ -34,8 +34,12 @@ public class EnemyFollow : MonoBehaviour
             // Check for obstacles before moving towards the player
             if (!Physics.Raycast(transform.position, player.position - transform.position, detectionRange, obstacleLayer))
             {
-                // Move the enemy towards the player
-                transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+                // Add some randomness to the movement direction
+                Vector3 randomDirection = Random.insideUnitSphere * spreadRadius;
+                Vector3 targetPosition = player.position + randomDirection;
+
+                // Move the enemy towards the target position
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
                 // Rotate the enemy to face the player (optional)
                 Vector3 direction = (player.position - transform.position).normalized;

@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,8 +16,10 @@ public class InteractTest : MonoBehaviour, IInteractable
     public AudioClip adrikHos; 
     public Camera mainCamera;
     public CameraShaker cameraShaker;
-    public GameObject enemy; 
+    public GameObject[] enemies; // Array to store references to all the enemies
     public GameObject card;
+
+    private int currentEnemyIndex = 0; // Index to track the current enemy
 
     public void Interact() 
     {
@@ -47,6 +48,12 @@ public class InteractTest : MonoBehaviour, IInteractable
                 if (gameObject == card)
                 {
                     StartCoroutine(InteractWithEnemy());
+                }
+                break;
+            case 4: // New case for interacting with the door
+                if (gameObject == Door)
+                {
+                    StartCoroutine(ActivateCommsDeviceAndSwitchScene());
                 }
                 break;
             default:
@@ -89,22 +96,46 @@ public class InteractTest : MonoBehaviour, IInteractable
         bossAudioSource.Play();
     }
 
-    IEnumerator InteractWithEnemy()
+ IEnumerator InteractWithEnemy()
 {
-  
-    AudioSource.PlayClipAtPoint(adrikHos, transform.position);
-
-    enemy.SetActive(true);
-
-    yield return new WaitForSeconds(3f);
-
-    Health playerHealth = FindObjectOfType<Health>();
-    if (playerHealth != null)
+    while (currentEnemyIndex < enemies.Length)
     {
-        playerHealth.TakeDamage(20);
-    }
+        // Activate the current enemy
+        enemies[currentEnemyIndex].SetActive(true);
 
-        yield return null;
+        // Rotate towards the current enemy
+        Vector3 direction = (enemies[currentEnemyIndex].transform.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
+
+        // Wait for the current enemy to be destroyed or become null
+        while (enemies[currentEnemyIndex] != null && enemies[currentEnemyIndex].activeSelf)
+        {
+            yield return null;
+        }
+
+        // Move to the next enemy
+        currentEnemyIndex++;
+    }
+}
+
+
+    IEnumerator ActivateCommsDeviceAndSwitchScene()
+    {
+        // Activate comms device and play audio clip
+        commsDevice.SetActive(true);
+        AudioSource commsAudioSource = commsDevice.GetComponent<AudioSource>();
+        commsAudioSource.clip = commsAudioClip;
+        commsAudioSource.Play();
+
+        // Wait for audio clip to finish playing
+        yield return new WaitForSeconds(commsAudioClip.length);
+
+        // Deactivate comms device
+        commsDevice.SetActive(false);
+
+        // Load the desired scene
+        SceneManager.LoadScene("Decable");
     }
 
     public void StopBossMusic()
