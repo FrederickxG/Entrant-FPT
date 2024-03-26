@@ -59,6 +59,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Decable.unity
     guid: 6203d7363a201104fb2b8bfaa817241c
+  - enabled: 1
+    path: Assets/Scenes/Inga.unity
+    guid: 0ec4e7a9dc82539449a59c1b9cd81cd1
+  - enabled: 1
+    path: Assets/Scenes/Leonis.unity
+    guid: 70436ae0334fcaa45b4ec83c2853ea3d
+  - enabled: 1
+    path: Assets/Scenes/Adrik.unity
+    guid: 6183545a3d812034fab44b52aa48bee9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}

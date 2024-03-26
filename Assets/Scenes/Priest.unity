@@ -1099,8 +1099,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The priest or known as Fedor Anastasiy was a noraml priest at Svyataya
-    holy church however inga got to him. It is suspected inga had personal ties being
+  m_text: 'The priest known as Fedor Anastasiy was a normal priest at Svyataya holy
+    church however inga got to him. It is suspected Inga had personal ties being
     this priest never left the church. Fedor kept his past well hidden so there''s
     not much on him however he was known to be a caring man '
   m_isRightToLeft: 0

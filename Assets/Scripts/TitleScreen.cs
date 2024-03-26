@@ -64,4 +64,18 @@ public class TitleScreen : MonoBehaviour
    {
         SceneManager.LoadScene("Ato");
     }
+
+     public void LeonisCH()
+   {
+        SceneManager.LoadScene("Leonis");
+    }
+
+     public void AdrikCH()
+   {
+        SceneManager.LoadScene("Adrik");
+    }
+     public void IngaCH()
+   {
+        SceneManager.LoadScene("Inga");
+    }
 }

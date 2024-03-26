@@ -158,7 +158,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 343.1, y: 317.6}
-  m_SizeDelta: {x: 559.8, y: 50}
+  m_SizeDelta: {x: 678.9, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &165257101
 MonoBehaviour:
@@ -182,9 +182,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Freya is your AI assistant created on 12/2/1996, Her purpose was to simply
     support you on missions and monitor your well-being however she soon became more
-    advance than expected, she began to express human emotions and turn into her
-    own "being" luckily for you she didn''t start to hate her job but insteads feels
-    content with staying by your side '
+    advanced than expected, and she began to express human emotions and turn into
+    her own "being" Luckily for you, she didn''t start to hate her job but instead
+    feels content with staying by your side '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55684882bc0802d4584f21ebf34af314, type: 2}
   m_sharedMaterial: {fileID: 4423993774632382410, guid: 55684882bc0802d4584f21ebf34af314,

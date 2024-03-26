@@ -224,7 +224,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 649759394}
         m_TargetAssemblyTypeName: TitleScreen, Assembly-CSharp
-        m_MethodName: AtoCH
+        m_MethodName: AdrikCH
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -373,7 +373,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 649759394}
         m_TargetAssemblyTypeName: TitleScreen, Assembly-CSharp
-        m_MethodName: AtoCH
+        m_MethodName: LeonisCH
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1790,7 +1790,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 649759394}
         m_TargetAssemblyTypeName: TitleScreen, Assembly-CSharp
-        m_MethodName: AtoCH
+        m_MethodName: IngaCH
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
