@@ -17,7 +17,6 @@ public class GameStartSequence : MonoBehaviour
 
     private void Start()
     {
-
         // Activate UI panel
         uiPanel.SetActive(false);
 
@@ -47,9 +46,6 @@ public class GameStartSequence : MonoBehaviour
 
         // Deactivate Adrik perch
         adrikPerch.SetActive(false);
-
-        // Deactivate coms device
-        comsDevice.SetActive(false);
 
         // Switch back to the main camera
         alternateCamera.SetActive(false);

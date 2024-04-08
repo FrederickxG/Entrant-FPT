@@ -1047,32 +1047,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '-Night sky added to all levels
+  m_text: '-Fixed pause menu on bunker and decable
 
-    -Flashback level done
+    -Improving manors inside
 
-    -lvl 3
-    full outline done
+    -Added
+    more lights to the bunker
 
-    -Textures added to lvl 3 outline
+    -Swapped gun asset
 
-    -rain added
+    -Added flashlight to
+    gun
 
-    -rain
-    sounds added
-
-    -inga & leonis chracter models added
-
-    -skeleton props added
-    to arena + seats
-
-    -Finished/Updated LEVEL 2.5
-
-    - Inga,Adrik,Leonis added
-    to character info
-
-    -
-
+    -Add flashlight key to help screen
 
 
 
@@ -1893,7 +1880,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Update Log V-1.9 '
+  m_text: Update Log V-1.9.8
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd22c722b23c2bd4fb63504352f954de, type: 2}
   m_sharedMaterial: {fileID: 2851641717062925049, guid: dd22c722b23c2bd4fb63504352f954de,
@@ -1921,7 +1908,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.7
+  m_fontSize: 23.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
