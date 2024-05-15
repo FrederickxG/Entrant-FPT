@@ -69,12 +69,12 @@ public class Gun : MonoBehaviour
 
                 if (Physics.Raycast(muzzle.position, transform.forward, out RaycastHit hitInfo, gunData.maxDistance)) // set raycast for virtual bullet
                 {
+                    OnGunShot();
                     IDamageable damageable = hitInfo.transform.GetComponent<IDamageable>(); // damage info
                     damageable?.TakeDamage(gunData.damage);
 
                     gunData.currentAmmo--;
                     timeSinceLastShot = 0;
-                    OnGunShot();
                 }
             }
         }
