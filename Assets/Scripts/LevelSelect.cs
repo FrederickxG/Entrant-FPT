@@ -20,6 +20,26 @@ public class LevelSelect : MonoBehaviour
     SceneManager.LoadScene("Bunker");
    }
 
+   public void Level4()
+   {
+    SceneManager.LoadScene("Decable");
+   }
+
+   public void Level5()
+   {
+    SceneManager.LoadScene("Recap");
+   }
+
+    public void Level6()
+   {
+    SceneManager.LoadScene("Failsafe");
+   }
+
+    public void Credits()
+   {
+    SceneManager.LoadScene("Credits");
+   }
+
    public void Back()
    {
     SceneManager.LoadScene("TitleScreen");

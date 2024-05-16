@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
-    public Text healthText;
-
+    public Image healthBarImage; // Reference to the Image component
     public int maxHealth = 100;
     public int currentHealth;
     public DamageIndicator damageIndicator;
@@ -17,22 +16,21 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        currentHealth = maxHealth; // sets curren health to max health on start up
+        currentHealth = maxHealth; // Sets current health to max health on start up
+        UpdateHealthBar(); // Initialize health bar
     }
 
     private void Update()
     {
-        if (currentHealth > maxHealth) currentHealth = maxHealth; // if the current health is more than the max health set current to max 
-
+        if (currentHealth > maxHealth) currentHealth = maxHealth; // If the current health is more than the max health set current to max
     }
 
     public void TakeDamage(int damage)
     {
-
         damageIndicator.ShowDamageIndicator();
-        currentHealth -= damage; // damage taking tracking to curent health
+        currentHealth -= damage; // Subtract damage from current health
         currentHealth = Mathf.Max(currentHealth, 0); // Ensure health never goes below 0
-        healthText.text = "Health: " + currentHealth + "%"; // updates health text
+        UpdateHealthBar(); // Update health bar
         damageSound.clip = hurtSounds[Random.Range(0, hurtSounds.Length)];
         damageSound.Play();
 
@@ -41,6 +39,11 @@ public class Health : MonoBehaviour
             // Player has died
             GameOver();
         }
+    }
+
+    void UpdateHealthBar()
+    {
+        healthBarImage.fillAmount = (float)currentHealth / maxHealth; // Update the fill amount of the health bar image
     }
 
     void GameOver()

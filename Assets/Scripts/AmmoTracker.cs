@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class AmmoTracker : MonoBehaviour
 {
     public GameObject Gun;
-    public Text AmmoText;
+    public TextMeshProUGUI AmmoText;
     public string gunDataName;
     public GunData gunData;
 
@@ -29,6 +30,6 @@ public class AmmoTracker : MonoBehaviour
     {
         // relays ammon onto the ammo text
         int totalAmmo = gunData.currentAmmo + magSize * gunData.currentAmmo;
-        AmmoText.text = "Ammo: " + gunData.currentAmmo;
+        AmmoText.text = gunData.currentAmmo + "/6" ;
     }
 }

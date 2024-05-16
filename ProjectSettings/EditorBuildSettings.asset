@@ -68,6 +68,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Adrik.unity
     guid: 6183545a3d812034fab44b52aa48bee9
+  - enabled: 1
+    path: Assets/Scenes/Recap.unity
+    guid: 54bf9cdf3af67f4478aed527227053e4
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 1d96e177a6488ee40bc9a2f6c86d3fd5
+  - enabled: 1
+    path: Assets/Scenes/Failsafe.unity
+    guid: db53e7e698a5fa54fb0d39be4d960b7f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9e7be553448fa2546aea5752021cbcf7,
       type: 2}
