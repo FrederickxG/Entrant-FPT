@@ -10,7 +10,7 @@ public class EnemyHealthUI : MonoBehaviour
     {
         if (enemyHealth != null && healthBarImage != null)
         {
-            healthBarImage.fillAmount = enemyHealth.health / 100f;
+            healthBarImage.fillAmount = enemyHealth.health / enemyHealth.maxHealth;
         }
     }
 }

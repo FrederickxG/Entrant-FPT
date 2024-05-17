@@ -1047,10 +1047,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "-Mission recap office added\n-Credits scene created\r\n-Boss health bars
+  m_text: "-Mission recap office added\n-Credits scene added\r\n-Boss health bars
     added\n-Circle health bar added\n-Updated ammo tracker layout\r\n-Asylum shooting
-    fixed \r\n-Decable shooting fixed(WIP)\r\n-Level select screen updated\r\n-Dionne's
-    scene added\n-Blood splatter effect\r added\n-Subtitles working\n\n\n\n\n"
+    fixed \r\n-Decable shooting fixed\n-Level select screen updated\r\n-Dionne's
+    scene added\n-Blood splatter added\n-Subtitles added\n-Camera Shake added\n-Blocking
+    added\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f186868620103449822a234c371f8ef, type: 2}
   m_sharedMaterial: {fileID: 8530920090350918519, guid: 2f186868620103449822a234c371f8ef,
@@ -1865,7 +1866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Update Log V-1.9.9
+  m_text: Update Log V-1.9
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dd22c722b23c2bd4fb63504352f954de, type: 2}
   m_sharedMaterial: {fileID: 2851641717062925049, guid: dd22c722b23c2bd4fb63504352f954de,
@@ -1893,7 +1894,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.9
+  m_fontSize: 26.7
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

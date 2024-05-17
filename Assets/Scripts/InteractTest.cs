@@ -15,9 +15,16 @@ public class InteractTest : MonoBehaviour, IInteractable
     public AudioClip adrikVL;
     public AudioClip adrikHos; 
     public Camera mainCamera;
-    public CameraShaker cameraShaker;
+    public CameraShake cameraShake;
+    public float shakeDuration = 0.5f;
+    public float shakeMagnitude = 0.1f;
+    public float postShakeDelay = 0.5f;
     public GameObject[] enemies; // Array to store references to all the enemies
     public GameObject card;
+    public GameObject UI;
+    public GameObject Doorcam;
+    public GameObject MainCam;
+
 
     private int currentEnemyIndex = 0; // Index to track the current enemy
 
@@ -41,7 +48,11 @@ public class InteractTest : MonoBehaviour, IInteractable
             case 2:
                 if (gameObject == Door)
                 {
+                     UI.SetActive(false);
+                    MainCam.SetActive(false);
+                     Doorcam.SetActive(true);
                     StartCoroutine(PlayAdrikVLAudioAndSwitchScene());
+                 
                 }
                 break;
             case 3: 
@@ -60,6 +71,14 @@ public class InteractTest : MonoBehaviour, IInteractable
                 break;
         }
     }
+
+    private void Start()
+    {
+        if (cameraShake == null)
+        {
+            cameraShake = Camera.main.GetComponent<CameraShake>();
+        }
+    }
    
     IEnumerator PlayAdrikVLAudioAndSwitchScene()
     {
@@ -70,7 +89,9 @@ public class InteractTest : MonoBehaviour, IInteractable
         yield return new WaitForSeconds(adrikVL.length);
 
         // Shake the camera
-        cameraShaker.Shake();
+        yield return StartCoroutine(cameraShake.Shake(shakeDuration, shakeMagnitude));
+
+        yield return new WaitForSeconds(postShakeDelay);
 
         // Load the desired scene
         SceneManager.LoadScene("Knocked");
