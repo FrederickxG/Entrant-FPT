@@ -180,11 +180,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Freya is your AI assistant created on 12/2/1996, Her purpose was to simply
-    support you on missions and monitor your well-being however she soon became more
-    advanced than expected, and she began to express human emotions and turn into
-    her own "being" Luckily for you, she didn''t start to hate her job but instead
-    feels content with staying by your side '
+  m_text: Freya is your AI assistant, created on 12/2/1996. Her purpose was simply
+    to support you on missions and monitor your well-being. However, she soon became
+    more advanced than expected and began to express human emotions, turning into
+    her own "being." Luckily for you, she didn't start to hate her job but instead
+    feels content with staying by your side.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55684882bc0802d4584f21ebf34af314, type: 2}
   m_sharedMaterial: {fileID: 4423993774632382410, guid: 55684882bc0802d4584f21ebf34af314,
@@ -959,7 +959,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.18431373, g: 0.18431373, b: 0.18431373, a: 1}
+  m_BackGroundColor: {r: 0.06666667, g: 0.06666667, b: 0.06666667, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

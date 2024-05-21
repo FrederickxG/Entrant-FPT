@@ -529,7 +529,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+  m_BackGroundColor: {r: 0.06666667, g: 0.06666667, b: 0.06666667, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -800,7 +800,7 @@ RectTransform:
   m_GameObject: {fileID: 1564653248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7, y: 1.7, z: 1.7}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 1886948457}
   m_RootOrder: 2
@@ -808,7 +808,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 337.98, y: 301}
-  m_SizeDelta: {x: 670.4, y: 80}
+  m_SizeDelta: {x: 786.5, y: 95.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1564653250
 MonoBehaviour:
@@ -830,14 +830,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Adrik was an orphan since her parents abandoned her at birth she grew
-    up alone and weak with no one to speak for her. She had to fend for herself which
-    helped her scrape by but she wanted someone to rely on, while living her life
-    she was approached by inga with a deal she joined him and had someone and he
-    got to experiment adrik didn''t know what would come next but she knew that at
-    least she wasn''t alone anymore
-
-'
+  m_text: Adrik was an orphan since her parents abandoned her at birth. She grew
+    up alone and weak, with no one to speak for her. She had to fend for herself,
+    which helped her scrape by, but she wanted someone to rely on. While living her
+    life, she was approached by Inga with a deal. She joined him, and in return,
+    she had someone to rely on while he got to experiment. Adrik didn't know what
+    would come next, but she knew that at least she wasn't alone anymore.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55684882bc0802d4584f21ebf34af314, type: 2}
   m_sharedMaterial: {fileID: 4423993774632382410, guid: 55684882bc0802d4584f21ebf34af314,

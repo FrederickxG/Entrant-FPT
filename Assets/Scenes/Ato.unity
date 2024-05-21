@@ -157,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 337.98, y: 301}
+  m_AnchoredPosition: {x: 337.98, y: 386.5}
   m_SizeDelta: {x: 637.3, y: 64.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &827818406
@@ -180,10 +180,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You are agent Ato Carter, a 22-year-old under the Sacrificial Perseverance
-    Kinsfolk known as the SPK AGENCY. You first got recruited at 17 and have been
-    saving lives ever since with a great mentor by your side you assumed you could
-    take on any and everything, let us see how you do when you''re on your own. '
+  m_text: '
+
+    You are Agent Ato Carter, a 22-year-old operative under the Sacrificial
+    Perseverance Kinsfolk, known as the SPK Agency. You were recruited at 17 and
+    have been saving lives ever since. With a great mentor by your side, you assumed
+    you could take on anything and everything. Now, let''s see how you do when you''re
+    on your own.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55684882bc0802d4584f21ebf34af314, type: 2}
   m_sharedMaterial: {fileID: 4423993774632382410, guid: 55684882bc0802d4584f21ebf34af314,
@@ -832,7 +835,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+  m_BackGroundColor: {r: 0.06666667, g: 0.06666667, b: 0.06666667, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

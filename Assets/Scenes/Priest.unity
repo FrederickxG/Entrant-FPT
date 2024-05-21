@@ -324,7 +324,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+  m_BackGroundColor: {r: 0.06666667, g: 0.06666667, b: 0.06666667, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -784,7 +784,7 @@ GameObject:
   - component: {fileID: 1512478129}
   - component: {fileID: 1512478128}
   m_Layer: 5
-  m_Name: Nmae
+  m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1077,7 +1077,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 287.4, y: 265.2}
-  m_SizeDelta: {x: 543.63, y: 110.54}
+  m_SizeDelta: {x: 624.6, y: 110.54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1819544060
 MonoBehaviour:
@@ -1099,10 +1099,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The priest known as Fedor Anastasiy was a normal priest at Svyataya holy
-    church however inga got to him. It is suspected Inga had personal ties being
-    this priest never left the church. Fedor kept his past well hidden so there''s
-    not much on him however he was known to be a caring man '
+  m_text: The priest known as Fedor Anastasiy was a normal priest at Svyataya Holy
+    Church. However, Inga got to him. It is suspected that Inga had personal ties,
+    as this priest never left the church. Fedor kept his past well hidden, so there's
+    not much known about him; however, he was known to be a caring man.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55684882bc0802d4584f21ebf34af314, type: 2}
   m_sharedMaterial: {fileID: 4423993774632382410, guid: 55684882bc0802d4584f21ebf34af314,

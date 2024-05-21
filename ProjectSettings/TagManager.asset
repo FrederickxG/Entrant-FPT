@@ -11,6 +11,8 @@ TagManager:
   - Door
   - Car
   - Adrik
+  - Ground
+  - Interactable
   layers:
   - Default
   - TransparentFX

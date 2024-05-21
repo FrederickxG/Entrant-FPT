@@ -24,6 +24,8 @@ public class InteractTest : MonoBehaviour, IInteractable
     public GameObject UI;
     public GameObject Doorcam;
     public GameObject MainCam;
+    public ObjectiveManager objectiveManager;
+    private bool objectiveSet = false; // To ensure the objective is set only once
 
 
     private int currentEnemyIndex = 0; // Index to track the current enemy
@@ -61,7 +63,7 @@ public class InteractTest : MonoBehaviour, IInteractable
                     StartCoroutine(InteractWithEnemy());
                 }
                 break;
-            case 4: // New case for interacting with the door
+            case 4: 
                 if (gameObject == Door)
                 {
                     StartCoroutine(ActivateCommsDeviceAndSwitchScene());
@@ -111,10 +113,22 @@ public class InteractTest : MonoBehaviour, IInteractable
         // Deactivate comms device
         commsDevice.SetActive(false);
 
+        objectiveManager.SetObjective("Defeat the priest");
+        objectiveSet = true; // Mark the objective as set
+
         // Spawn boss and play boss music
         collect.SetActive(false);
         Boss.SetActive(true);
         bossAudioSource.Play();
+        
+         while (Boss.activeSelf)
+        {
+            yield return null; // Wait for the next frame
+        }
+
+        // Update objective when the boss is defeated
+        objectiveManager.SetObjective("Find the real clipboard");
+        objectiveSet = true; // Mark the objective as set
     }
 
  IEnumerator InteractWithEnemy()

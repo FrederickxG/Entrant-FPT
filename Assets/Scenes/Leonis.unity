@@ -336,7 +336,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 337.98, y: 301}
-  m_SizeDelta: {x: 698.6, y: 79.5}
+  m_SizeDelta: {x: 780.7, y: 79.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &192302600
 MonoBehaviour:
@@ -358,14 +358,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Leonis was one of the founders of the SPK agency, he completed countless
-    missions and saved countless amount of lives. He was truly one of great abilities.
-    When you got recruited to join the agency he took you under his wing and trained
-    you to be a 1 of-1 replica of him you couldn''t be  though, Leonis knew he would
-    meet an early fate however he hoped it was for a good cause, He entrusted all
-    he lived for to you now he just watches over you
-
-'
+  m_text: Leonis was one of the founders of the SPK agency. He completed countless
+    missions and saved numerous lives. He was truly a man of great abilities. When
+    you were recruited to join the agency, he took you under his wing and trained
+    you to be a one-of-a-kind replica of him. You couldn't be, though. Leonis knew
+    he would meet an early fate; however, he hoped it would be for a good cause.
+    He entrusted everything he lived for to you, and now he just watches over you.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55684882bc0802d4584f21ebf34af314, type: 2}
   m_sharedMaterial: {fileID: 4423993774632382410, guid: 55684882bc0802d4584f21ebf34af314,
@@ -617,7 +615,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+  m_BackGroundColor: {r: 0.06666667, g: 0.06666667, b: 0.06666667, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

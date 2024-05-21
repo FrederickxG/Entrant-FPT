@@ -1051,7 +1051,7 @@ MonoBehaviour:
     added\n-Circle health bar added\n-Updated ammo tracker layout\r\n-Asylum shooting
     fixed \r\n-Decable shooting fixed\n-Level select screen updated\r\n-Dionne's
     scene added\n-Blood splatter added\n-Subtitles added\n-Camera Shake added\n-Blocking
-    added\n\n\n"
+    added\n-Inspect added\n-Fixed Zombies\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f186868620103449822a234c371f8ef, type: 2}
   m_sharedMaterial: {fileID: 8530920090350918519, guid: 2f186868620103449822a234c371f8ef,
@@ -2825,7 +2825,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.15686275, g: 0.15686275, b: 0.15686275, a: 0}
+  m_BackGroundColor: {r: 0.066037714, g: 0.066037714, b: 0.066037714, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

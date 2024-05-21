@@ -7,8 +7,11 @@ public class DialogueTrigger : MonoBehaviour
     public float dialogueStartDelay = 3f;
     public GameObject freyaOmanr;
     public GameObject freyaWmanor;
+    public GameObject freyaCene;
 
+    private bool dialogue1Triggered = false;
     private bool dialogue2Triggered = false;
+    private bool dialogue3Triggered = false;
 
     private void Start()
     {
@@ -19,53 +22,101 @@ public class DialogueTrigger : MonoBehaviour
     {
         yield return new WaitForSeconds(dialogueStartDelay);
 
-        StartCoroutine(DialogueSequence1());
+        // Check conditions for DialogueSequence1, DialogueSequence2, and DialogueSequence3
+        if (freyaOmanr != null)
+            StartCoroutine(CheckDialogueSequence1Conditions());
+
+        if (freyaWmanor != null)
+            StartCoroutine(CheckDialogueSequence2Conditions());
+
+        if (freyaCene != null)
+            StartCoroutine(CheckDialogueSequence3Conditions());
     }
 
-    private IEnumerator DialogueSequence1()
+    private IEnumerator CheckDialogueSequence1Conditions()
     {
-        // Set the displayDuration for DialogueSequence1
-        subtitleManager.displayDuration = 2f;
-
-        subtitleManager.ShowSubtitle("There's a clipboard somewhere here");
-        yield return new WaitForSeconds(subtitleManager.displayDuration); // Wait for the display duration + some padding
-
-        subtitleManager.ShowSubtitle("If I had to guess it'd be in that castle");
-        yield return new WaitForSeconds(subtitleManager.displayDuration);
-
-        subtitleManager.ShowSubtitle("Although maybe bringing a shovel would've faired better");
-        yield return new WaitForSeconds(subtitleManager.displayDuration);
-
-        // After DialogueSequence1, check conditions for DialogueSequence2
-        StartCoroutine(CheckDialogueSequence2Conditions());
+        while (!dialogue1Triggered)
+        {
+            if (freyaOmanr.activeSelf)
+            {
+                yield return StartCoroutine(DialogueSequence1());
+                dialogue1Triggered = true;
+            }
+            yield return null;
+        }
     }
 
     private IEnumerator CheckDialogueSequence2Conditions()
     {
-        // Check conditions for dialogue sequence 2
-        while (!dialogue2Triggered) // Run the check continuously until dialogue2Triggered becomes true
+        while (!dialogue2Triggered)
         {
             if (freyaWmanor.activeSelf)
             {
-                StartCoroutine(DialogueSequence2());
-                dialogue2Triggered = true; // Set a flag to prevent repeated triggering
+                yield return StartCoroutine(DialogueSequence2());
+                dialogue2Triggered = true;
             }
-            yield return null; // Wait for the next frame before checking conditions again
+            yield return null;
         }
+    }
+
+    private IEnumerator CheckDialogueSequence3Conditions()
+    {
+        while (!dialogue3Triggered)
+        {
+            if (freyaCene.activeSelf)
+            {
+                yield return StartCoroutine(DialogueSequence3());
+                dialogue3Triggered = true;
+            }
+            yield return null;
+        }
+    }
+
+    private IEnumerator DialogueSequence1()
+    {
+        yield return ShowDialogue(new string[]
+        {
+            "Freya- There's a clipboard somewhere here",
+            "Freya- If I had to guess it'd be in that castle",
+            "Freya- Although maybe bringing a shovel would've faired better"
+        }, 2f);
     }
 
     private IEnumerator DialogueSequence2()
     {
-        // Set the displayDuration for DialogueSequence2
-        subtitleManager.displayDuration = 1.4f;
+        yield return ShowDialogue(new string[]
+        {
+            "Freya- hm?",
+            "Freya- I’d advise you to take a few steps back",
+            "Freya- unless you wish to fail humanity",
+            "Ato- Yea",
+            "Ato- it's not like I don't wanna die in general",
+            "Ato- but you know, for humanity",
+            "Ato- Am I right?"
+        }, 1.6f);
+    }
 
-        subtitleManager.ShowSubtitle(" hm?");
-        yield return new WaitForSeconds(subtitleManager.displayDuration); // Wait for the display duration + some padding
+    private IEnumerator DialogueSequence3()
+    {
+        yield return ShowDialogue(new string[]
+        {
+            "Ato- So, Freya what you've got",
+            "Freya- well according to my database vantage is a small village on the outskirts of Svyataya",
+            "Freya- the town stayed under the radar for the entirety of its existence, but I guess we can add",
+            "Freya- a new entry to the history books", 
+            "Freya- by the way it would help if you took some pictures while you're there",
+            "Freya- I started a scrapbook for our explorations"
+        }, 3f);
+    }
 
-        subtitleManager.ShowSubtitle("I’d advise you to take a few steps back");
-        yield return new WaitForSeconds(subtitleManager.displayDuration);
+    private IEnumerator ShowDialogue(string[] dialogues, float displayDuration)
+    {
+        subtitleManager.displayDuration = displayDuration;
 
-        subtitleManager.ShowSubtitle("unless you wish to fail humanity");
-        yield return new WaitForSeconds(subtitleManager.displayDuration);
+        foreach (var dialogue in dialogues)
+        {
+            subtitleManager.ShowSubtitle(dialogue);
+            yield return new WaitForSeconds(displayDuration);
+        }
     }
 }

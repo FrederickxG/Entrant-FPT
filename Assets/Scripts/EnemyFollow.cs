@@ -10,7 +10,12 @@ public class EnemyFollow : MonoBehaviour
     public float attackDistance = 2f;
     public int attackDamage = 10;
     public LayerMask obstacleLayer; // Layer mask to detect obstacles (e.g., other enemies)
+    public LayerMask groundLayer; // Layer mask for the ground
     public float spreadRadius = 2f; // Adjust the spread of enemies
+    public float separationRadius = 1.5f; // Radius within which enemies should separate
+    public float separationStrength = 5f; // Strength of the separation force
+    public float groundOffset = 0.5f; // Offset to keep the zombies above the ground
+    public float raycastLength = 2f; // Length of the raycast to detect the ground
 
     private float timer;
     private bool canAttack;
@@ -34,12 +39,14 @@ public class EnemyFollow : MonoBehaviour
             // Check for obstacles before moving towards the player
             if (!Physics.Raycast(transform.position, player.position - transform.position, detectionRange, obstacleLayer))
             {
-                // Add some randomness to the movement direction
-                Vector3 randomDirection = Random.insideUnitSphere * spreadRadius;
-                Vector3 targetPosition = player.position + randomDirection;
+                // Apply separation force to avoid stacking
+                Vector3 separationForce = GetSeparationForce();
 
-                // Move the enemy towards the target position
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+                // Calculate the target position with separation force
+                Vector3 targetPosition = player.position + separationForce;
+
+                // Move the enemy towards the target position, keeping it on the ground
+                MoveTowardsTarget(targetPosition);
 
                 // Rotate the enemy to face the player (optional)
                 Vector3 direction = (player.position - transform.position).normalized;
@@ -57,6 +64,57 @@ public class EnemyFollow : MonoBehaviour
                     StartCoroutine(AttackPlayer());
                 }
             }
+        }
+    }
+
+    private Vector3 GetSeparationForce()
+    {
+        Vector3 separationForce = Vector3.zero;
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, separationRadius);
+
+        foreach (Collider collider in hitColliders)
+        {
+            if (collider != this.GetComponent<Collider>())
+            {
+                Vector3 directionToOther = transform.position - collider.transform.position;
+                separationForce += directionToOther.normalized / directionToOther.magnitude;
+            }
+        }
+
+        return separationForce * separationStrength;
+    }
+
+    private void MoveTowardsTarget(Vector3 targetPosition)
+    {
+        // Cast a ray downward to find the ground height at the target position
+        RaycastHit hit;
+        Vector3 targetGroundedPosition = targetPosition;
+
+        if (Physics.Raycast(targetPosition + Vector3.up * raycastLength, Vector3.down, out hit, raycastLength * 2, groundLayer))
+        {
+            // Set the target position to be slightly above the ground
+            targetGroundedPosition.y = hit.point.y + groundOffset;
+        }
+        else
+        {
+            // If the raycast fails, keep the target position's y-coordinate unchanged
+            targetGroundedPosition.y = transform.position.y;
+        }
+
+        // Move the enemy towards the target grounded position
+        transform.position = Vector3.MoveTowards(transform.position, targetGroundedPosition, moveSpeed * Time.deltaTime);
+
+        // Ensure the enemy is always grounded
+        GroundEnemy();
+    }
+
+    private void GroundEnemy()
+    {
+        // Cast a ray downward to adjust the enemy's position to the ground
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + Vector3.up * raycastLength, Vector3.down, out hit, raycastLength * 2, groundLayer))
+        {
+            transform.position = new Vector3(transform.position.x, hit.point.y + groundOffset, transform.position.z);
         }
     }
 
