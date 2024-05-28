@@ -8,10 +8,12 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject freyaOmanr;
     public GameObject freyaWmanor;
     public GameObject freyaCene;
+    public GameObject freyaOvill;
 
     private bool dialogue1Triggered = false;
     private bool dialogue2Triggered = false;
     private bool dialogue3Triggered = false;
+    private bool dialogue4Triggered = false;
 
     private void Start()
     {
@@ -31,6 +33,9 @@ public class DialogueTrigger : MonoBehaviour
 
         if (freyaCene != null)
             StartCoroutine(CheckDialogueSequence3Conditions());
+
+        if (freyaOvill!= null)
+            StartCoroutine(CheckDialogueSequence4Conditions());
     }
 
     private IEnumerator CheckDialogueSequence1Conditions()
@@ -72,6 +77,19 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
+     private IEnumerator CheckDialogueSequence4Conditions()
+    {
+        while (!dialogue4Triggered)
+        {
+            if (freyaOvill.activeSelf)
+            {
+                yield return StartCoroutine(DialogueSequence4());
+                dialogue4Triggered = true;
+            }
+            yield return null;
+        }
+    }
+
     private IEnumerator DialogueSequence1()
     {
         yield return ShowDialogue(new string[]
@@ -100,13 +118,30 @@ public class DialogueTrigger : MonoBehaviour
     {
         yield return ShowDialogue(new string[]
         {
-            "Ato- So, Freya what you've got",
-            "Freya- well according to my database vantage is a small village on the outskirts of Svyataya",
-            "Freya- the town stayed under the radar for the entirety of its existence, but I guess we can add",
-            "Freya- a new entry to the history books", 
+            "Ato- alright, Freya hit me ",
+            "Freya- well according to my database vantage ",
+            "Freya- is a small village on the outskirts of Svyataya",
+            "Freya- the town stayed under the radar", 
+            "Freya- for the entirety of its existence", 
+            "Freya-  but I guess we can add",
+            "Freya- a new entry to the history books",
             "Freya- by the way it would help if you took some pictures while you're there",
-            "Freya- I started a scrapbook for our explorations"
-        }, 3f);
+            "Freya- I started a scrapbook for our explorations",
+            "Ato- a scrapbook well   your interesting freya"
+        }, 2f);
+    }
+
+    private IEnumerator DialogueSequence4()
+    {
+        yield return ShowDialogue(new string[]
+        {
+            "Freya- so this vantage huh?  pretty underwhelming if you ask me",
+            "Freya- but find Adrik’s house and while you're at it ",
+            "Freya-  you should check out the rent",
+            "Ato- you know that's a great idea but", 
+            "Ato- there's just something about the bronx rats", 
+            "Ato- that is so charming", 
+        }, 4f);
     }
 
     private IEnumerator ShowDialogue(string[] dialogues, float displayDuration)

@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,7 +14,7 @@ public class InteractTest : MonoBehaviour, IInteractable
     public AudioClip commsAudioClip;
     public GameObject Door;
     public AudioClip adrikVL;
-    public AudioClip adrikHos; 
+    public AudioClip adrikHos;
     public Camera mainCamera;
     public CameraShake cameraShake;
     public float shakeDuration = 0.5f;
@@ -27,10 +28,9 @@ public class InteractTest : MonoBehaviour, IInteractable
     public ObjectiveManager objectiveManager;
     private bool objectiveSet = false; // To ensure the objective is set only once
 
-
     private int currentEnemyIndex = 0; // Index to track the current enemy
 
-    public void Interact() 
+    public void Interact()
     {
         switch (interactionType)
         {
@@ -50,20 +50,19 @@ public class InteractTest : MonoBehaviour, IInteractable
             case 2:
                 if (gameObject == Door)
                 {
-                     UI.SetActive(false);
+                    UI.SetActive(false);
                     MainCam.SetActive(false);
-                     Doorcam.SetActive(true);
+                    Doorcam.SetActive(true);
                     StartCoroutine(PlayAdrikVLAudioAndSwitchScene());
-                 
                 }
                 break;
-            case 3: 
+            case 3:
                 if (gameObject == card)
                 {
                     StartCoroutine(InteractWithEnemy());
                 }
                 break;
-            case 4: 
+            case 4:
                 if (gameObject == Door)
                 {
                     StartCoroutine(ActivateCommsDeviceAndSwitchScene());
@@ -81,7 +80,7 @@ public class InteractTest : MonoBehaviour, IInteractable
             cameraShake = Camera.main.GetComponent<CameraShake>();
         }
     }
-   
+
     IEnumerator PlayAdrikVLAudioAndSwitchScene()
     {
         // Play the AdrikVL audio clip
@@ -120,8 +119,8 @@ public class InteractTest : MonoBehaviour, IInteractable
         collect.SetActive(false);
         Boss.SetActive(true);
         bossAudioSource.Play();
-        
-         while (Boss.activeSelf)
+
+        while (Boss.activeSelf)
         {
             yield return null; // Wait for the next frame
         }
@@ -131,29 +130,34 @@ public class InteractTest : MonoBehaviour, IInteractable
         objectiveSet = true; // Mark the objective as set
     }
 
- IEnumerator InteractWithEnemy()
-{
-    while (currentEnemyIndex < enemies.Length)
+    IEnumerator InteractWithEnemy()
     {
-        // Activate the current enemy
-        enemies[currentEnemyIndex].SetActive(true);
+        // Play the AdrikHos audio clip
+        AudioSource.PlayClipAtPoint(adrikHos, transform.position);
 
-        // Rotate towards the current enemy
-        Vector3 direction = (enemies[currentEnemyIndex].transform.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
+        // Wait for the audio clip to finish playing
+        yield return new WaitForSeconds(adrikHos.length);
 
-        // Wait for the current enemy to be destroyed or become null
-        while (enemies[currentEnemyIndex] != null && enemies[currentEnemyIndex].activeSelf)
+        while (currentEnemyIndex < enemies.Length)
         {
-            yield return null;
+            // Activate the current enemy
+            enemies[currentEnemyIndex].SetActive(true);
+
+            // Rotate towards the current enemy
+            Vector3 direction = (enemies[currentEnemyIndex].transform.position - transform.position).normalized;
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
+
+            // Wait for the current enemy to be destroyed or become null
+            while (enemies[currentEnemyIndex] != null && enemies[currentEnemyIndex].activeSelf)
+            {
+                yield return null;
+            }
+
+            // Move to the next enemy
+            currentEnemyIndex++;
         }
-
-        // Move to the next enemy
-        currentEnemyIndex++;
     }
-}
-
 
     IEnumerator ActivateCommsDeviceAndSwitchScene()
     {

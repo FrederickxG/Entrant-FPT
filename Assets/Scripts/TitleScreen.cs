@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class TitleScreen : MonoBehaviour
 {
     
-    public string Manor;
+    public string Prerecap;
    
     public void StartGame()
    {
-        SceneManager.LoadScene("Manor");
+        SceneManager.LoadScene("Prerecap");
     }
 
     public void Quit()
@@ -77,5 +77,10 @@ public class TitleScreen : MonoBehaviour
      public void IngaCH()
    {
         SceneManager.LoadScene("Inga");
+    }
+
+    public void UIhelp()
+   {
+        SceneManager.LoadScene("UI");
     }
 }
