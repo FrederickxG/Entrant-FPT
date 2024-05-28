@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0052042017, g: 0.00903434, b: 0.005074352, a: 1}
+  m_IndirectSpecularColor: {r: 0.0052355397, g: 0.009028047, b: 0.0051113428, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -61091,10 +61091,10 @@ MonoBehaviour:
   adrikLethal: {fileID: 2978861662616887342}
   uiPanel: {fileID: 4754838563511195434}
   enemyHealth: {fileID: 708478782}
-  cutsceneAudioClip: {fileID: 8300000, guid: 4188663f34ae0344fb82efa715e00ef0, type: 3}
+  cutsceneAudioClip: {fileID: 8300000, guid: 362ec1a8b3f774e9ca272bcc4b5edcbd, type: 3}
   blurEffect: {fileID: 73022409}
-  blurSoundClip: {fileID: 8300000, guid: ecf93b2263d6eaf429fbd9f2f3798213, type: 3}
-  adrikLethalSoundClip: {fileID: 8300000, guid: e9ea91d5747393c47a8ea04a0ab82b9c,
+  blurSoundClip: {fileID: 8300000, guid: ab070c5bdcc964a1693b81c2dcec0709, type: 3}
+  adrikLethalSoundClip: {fileID: 8300000, guid: 1186eecf6e2474bc6a677516b734359a,
     type: 3}
 --- !u!114 &1336938784
 MonoBehaviour:
