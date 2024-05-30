@@ -1047,11 +1047,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "-Mission recap office added\n-Credits scene added\r\n-Boss health bars
-    added\n-Circle health bar added\n-Updated ammo tracker layout\r\n-Asylum shooting
-    fixed \r\n-Decable shooting fixed\n-Level select screen updated\r\n-Dionne's
-    scene added\n-Blood splatter added\n-Subtitles added\n-Camera Shake added\n-Blocking
-    added\n-Inspect added\n-Fixed Zombies\n\n\n"
+  m_text: "-Fixed stairs\r\n-Fixed clipboard\r\n-Added damage to the player when
+    too -close to adrik \r\n-Added objective onto the village\r\n-Added voice lines
+    to the village\r\n-Fixed subtitle placement\r\n-Added ui help screen\r\n-(objective)
+    button on help screen\r\n-Added prerecap scene\r\n-Finished rescue scene\r\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2f186868620103449822a234c371f8ef, type: 2}
   m_sharedMaterial: {fileID: 8530920090350918519, guid: 2f186868620103449822a234c371f8ef,

@@ -10,11 +10,15 @@ public class GameManager : MonoBehaviour
     public AudioSource freyaVAudioSource;
     public GameObject freyaA;
     public AudioSource freyaAAudioSource;
+    public AudioSource DecableD1AudioSource;
+    public AudioSource LeonisFAudioSource;
     public ObjectiveManager objectiveManager;
 
     private bool freyaObjectiveSet = false;
     private bool freyaVObjectiveSet = false;
-    private bool freyaaObjectiveSet = false; // Ensure this is the correct variable name
+    private bool freyaaObjectiveSet = false;
+    private bool DecableD1ObjectiveSet = false;
+    private bool LeonisFObjectiveSet = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +37,14 @@ public class GameManager : MonoBehaviour
         {
             freyaA.SetActive(true);
             freyaAAudioSource.Play();
+        }
+         else if (DecableD1AudioSource != null)
+        {
+            DecableD1AudioSource.Play();
+        }
+         else if (LeonisFAudioSource != null)
+        {
+            LeonisFAudioSource.Play();
         }
     }
 
@@ -81,6 +93,27 @@ public class GameManager : MonoBehaviour
                 freyaA.SetActive(false);
                 objectiveManager.SetObjective("Find the security card");
                 freyaaObjectiveSet = true; // Mark the objective as set
+            }
+        }
+
+        
+        if (!DecableD1ObjectiveSet)
+        {
+            // Check if DecableD1's audio has finished and set the objective if not already set
+            if (!DecableD1AudioSource.isPlaying)
+            {
+                objectiveManager.SetObjective("Survive");
+                DecableD1ObjectiveSet = true; // Mark the objective as set
+            }
+        }
+
+         if (!LeonisFObjectiveSet)
+        {
+            // Check if LeonisF's audio has finished and set the objective if not already set
+            if (!LeonisFAudioSource.isPlaying)
+            {
+                objectiveManager.SetObjective("Hit the targets");
+                LeonisFObjectiveSet = true; // Mark the objective as set
             }
         }
     }

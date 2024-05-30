@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Import the SceneManager
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -9,20 +9,17 @@ public class GameStartSequence : MonoBehaviour
     public GameObject alternateCamera;
     public GameObject cutsceneCamera;
     public GameObject comsDevice;
-    public GameObject audioClipObject;
-    public AudioClip startAudioClip;
+    public AudioSource startAudioSource;
     public GameObject adrikArena;
     public GameObject adrikPause;
     public GameObject adrikPerch;
     public GameObject adrikLethal;
     public GameObject uiPanel;
     public EnemyHealth enemyHealth;
-    public AudioClip cutsceneAudioClip;
-    public GameObject blurEffect; // Blur effect GameObject
-    public AudioClip blurSoundClip; // Sound to play with blur effect
-    public AudioClip adrikLethalSoundClip; // Sound to play when AdrikLethal is activated
-
-    private AudioSource audioSource;
+    public AudioSource cutsceneAudioSource;
+    public GameObject blurEffect; 
+    public AudioSource blurSoundSource; 
+    public AudioSource adrikLethalSoundSource; 
 
     private void Start()
     {
@@ -36,10 +33,8 @@ public class GameStartSequence : MonoBehaviour
         // Activate coms device
         comsDevice.SetActive(true);
 
-        // Play audio clip
-        audioSource = audioClipObject.AddComponent<AudioSource>();
-        audioSource.clip = startAudioClip;
-        audioSource.Play();
+        // Play start audio
+        startAudioSource.Play();
 
         // Start the coroutine to handle the rest of the sequence after the audio clip ends
         StartCoroutine(SequenceAfterAudioClip());
@@ -48,7 +43,7 @@ public class GameStartSequence : MonoBehaviour
     private IEnumerator SequenceAfterAudioClip()
     {
         // Wait for the audio clip to finish playing
-        yield return new WaitForSeconds(startAudioClip.length);
+        yield return new WaitForSeconds(startAudioSource.clip.length);
 
         // Set Adrik arena to active
         adrikArena.SetActive(true);
@@ -87,30 +82,27 @@ public class GameStartSequence : MonoBehaviour
         cutsceneCamera.SetActive(true);
 
         // Play cutscene audio
-        audioSource.clip = cutsceneAudioClip;
-        audioSource.Play();
+        cutsceneAudioSource.Play();
 
         // Wait for the audio clip to finish
-        yield return new WaitForSeconds(cutsceneAudioClip.length);
+        yield return new WaitForSeconds(cutsceneAudioSource.clip.length);
 
         // Activate blur effect and play blur sound
         blurEffect.SetActive(true);
-        audioSource.clip = blurSoundClip;
-        audioSource.Play();
+        blurSoundSource.Play();
 
         // Wait for blur sound to finish
-        yield return new WaitForSeconds(blurSoundClip.length);
+        yield return new WaitForSeconds(blurSoundSource.clip.length);
 
         // Deactivate blur effect
         blurEffect.SetActive(false);
 
         // Activate AdrikLethal and play its sound
         adrikLethal.SetActive(true);
-        audioSource.clip = adrikLethalSoundClip;
-        audioSource.Play();
+        adrikLethalSoundSource.Play();
 
         // Wait for AdrikLethal sound to finish
-        yield return new WaitForSeconds(adrikLethalSoundClip.length);
+        yield return new WaitForSeconds(adrikLethalSoundSource.clip.length);
 
         // Load the "training" level
         SceneManager.LoadScene("training");
