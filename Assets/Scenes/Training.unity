@@ -1224,7 +1224,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 5b4c4c6121bdaf342b0b6f7919473395, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1319,7 +1319,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f8cd102a4e21edb468458365447ff220, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ecf93b2263d6eaf429fbd9f2f3798213, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1461,7 +1461,8 @@ MonoBehaviour:
   freyaA: {fileID: 0}
   freyaAAudioSource: {fileID: 0}
   DecableD1AudioSource: {fileID: 0}
-  LeonisFAudioSource: {fileID: 524848721}
+  LeonisFAudioSource: {fileID: 524848722}
+  Adrik2AudioSource: {fileID: 0}
   objectiveManager: {fileID: 524848724}
 --- !u!43 &553485870
 Mesh:

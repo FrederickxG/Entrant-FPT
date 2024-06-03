@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public AudioSource freyaAAudioSource;
     public AudioSource DecableD1AudioSource;
     public AudioSource LeonisFAudioSource;
+    public AudioSource Adrik2AudioSource;
     public ObjectiveManager objectiveManager;
 
     private bool freyaObjectiveSet = false;
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
     private bool freyaaObjectiveSet = false;
     private bool DecableD1ObjectiveSet = false;
     private bool LeonisFObjectiveSet = false;
+    private bool Adrik2ObjectiveSet = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,13 +40,17 @@ public class GameManager : MonoBehaviour
             freyaA.SetActive(true);
             freyaAAudioSource.Play();
         }
-         else if (DecableD1AudioSource != null)
+        else if (DecableD1AudioSource != null)
         {
             DecableD1AudioSource.Play();
         }
-         else if (LeonisFAudioSource != null)
+        else if (LeonisFAudioSource != null)
         {
             LeonisFAudioSource.Play();
+        }
+        else if (Adrik2AudioSource != null)
+        {
+            Adrik2AudioSource.Play();
         }
     }
 
@@ -96,8 +102,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        
-        if (!DecableD1ObjectiveSet)
+        if (DecableD1AudioSource != null && !DecableD1ObjectiveSet)
         {
             // Check if DecableD1's audio has finished and set the objective if not already set
             if (!DecableD1AudioSource.isPlaying)
@@ -107,14 +112,32 @@ public class GameManager : MonoBehaviour
             }
         }
 
-         if (!LeonisFObjectiveSet)
+        if (LeonisFAudioSource != null && !LeonisFObjectiveSet)
         {
             // Check if LeonisF's audio has finished and set the objective if not already set
             if (!LeonisFAudioSource.isPlaying)
             {
+                Debug.Log("LeonisF audio finished");
                 objectiveManager.SetObjective("Hit the targets");
                 LeonisFObjectiveSet = true; // Mark the objective as set
             }
         }
+
+        if (Adrik2AudioSource != null && !Adrik2ObjectiveSet)
+        {
+            // Check if Adrik2's audio has finished and set the objective if not already set
+            if (!Adrik2AudioSource.isPlaying)
+            {
+                objectiveManager.SetObjective("Defeat Adrik");
+                Adrik2ObjectiveSet = true; // Mark the objective as set
+            }
+        }
+    }
+
+    // Method to set the Adrik2 objective
+    public void SetAdrik2Objective()
+    {
+        objectiveManager.SetObjective("Defeat Adrik");
+        Adrik2ObjectiveSet = true; // Mark the objective as set
     }
 }

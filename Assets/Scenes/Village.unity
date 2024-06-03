@@ -451,6 +451,7 @@ MonoBehaviour:
   freyaWmanor: {fileID: 0}
   freyaCene: {fileID: 0}
   freyaOvill: {fileID: 4154108353573511302}
+  Adrikvill: {fileID: 1295431405}
 --- !u!114 &78257902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7593,7 +7594,7 @@ MonoBehaviour:
   commsDevice: {fileID: 0}
   commsAudioClip: {fileID: 0}
   Door: {fileID: 594843597}
-  adrikVL: {fileID: 8300000, guid: 12aa18c55f932d24cae51468cfd3c292, type: 3}
+  adrikVL: {fileID: 8300000, guid: 3b36ba0f63b89bf41879c3cbbaaa7502, type: 3}
   adrikHos: {fileID: 0}
   mainCamera: {fileID: 1073177262}
   cameraShake: {fileID: 1295431406}
@@ -25717,6 +25718,9 @@ MonoBehaviour:
   freyaVAudioSource: {fileID: 4187831365925038019}
   freyaA: {fileID: 0}
   freyaAAudioSource: {fileID: 0}
+  DecableD1AudioSource: {fileID: 0}
+  LeonisFAudioSource: {fileID: 0}
+  Adrik2AudioSource: {fileID: 0}
   objectiveManager: {fileID: 1954993040}
 --- !u!4 &1954993039
 Transform:
@@ -27696,7 +27700,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2130975745
 Transform:
   m_ObjectHideFlags: 0
@@ -34662,8 +34666,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6b65f69271da1fb419740a1268ead8a2, type: 3}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: 2ce0035950549134b8ec2109c3431535, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -35592,7 +35596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd7c989625e14304bcda180809a45e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Manor: 
+  Prerecap: 
 --- !u!1 &4754838563851501502
 GameObject:
   m_ObjectHideFlags: 0
