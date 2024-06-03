@@ -217,17 +217,17 @@ public class DialogueTrigger : MonoBehaviour
             "Freya- based on my scans you are in some abandoned asylum however",
             "Freya- there's an exit very close so chop-chop if you want that worm",
             "Ato- yea I- I think I’ll pass ", 
-        }, new float[] { 1.4f, 2.5f, 2.8f, 2.4f, 2.8f});
+        }, new float[] { 2.1f, 3.0f, 3.7f, 4.8f, 0.2f});
     }
 
       private IEnumerator DialogueSequence7()
     {
         yield return ShowDialogue(new string[]
         {
-            "Ato- Robert Thompson, poor guy",
+            "Ato- Robert Thompson, hm poor guy",
             "Adrik- you should worry about yourself",
             "Ato- hm?",
-        }, new float[] { 1.4f, 2.5f, 2.8f});
+        }, new float[] { 3.3f, 2.7f, 0.5f});
     }
 
     private IEnumerator ShowDialogue(string[] dialogues, float[] displayDurations)

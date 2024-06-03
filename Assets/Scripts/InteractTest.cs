@@ -26,6 +26,7 @@ public class InteractTest : MonoBehaviour, IInteractable
     public GameObject Doorcam;
     public GameObject MainCam;
     public ObjectiveManager objectiveManager;
+    public GameObject Cardgo;
     private bool objectiveSet = false; // To ensure the objective is set only once
 
     private int currentEnemyIndex = 0; // Index to track the current enemy
@@ -134,6 +135,7 @@ public class InteractTest : MonoBehaviour, IInteractable
     {
         // Play the AdrikHos audio clip
         AudioSource.PlayClipAtPoint(adrikHos, transform.position);
+        Cardgo.SetActive(true); // to activate subtitles
 
         // Wait for the audio clip to finish playing
         yield return new WaitForSeconds(adrikHos.length);

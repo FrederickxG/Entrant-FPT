@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0052042017, g: 0.00903434, b: 0.005074352, a: 1}
+  m_IndirectSpecularColor: {r: 0.0052355397, g: 0.009028047, b: 0.0051113428, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4428,6 +4428,7 @@ MonoBehaviour:
   Doorcam: {fileID: 0}
   MainCam: {fileID: 0}
   objectiveManager: {fileID: 0}
+  Cardgo: {fileID: 800959538}
 --- !u!1001 &291015242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12554,6 +12555,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0999686, y: 2.2020106, z: 0.7354219}
   m_Center: {x: -0.000016897917, y: -0.000015269688, z: 0.36571386}
+--- !u!1 &800959538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 800959539}
+  m_Layer: 0
+  m_Name: card Subtitles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &800959539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 800959538}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -49.84028, y: -378.61984, z: -322.545}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &807259380
 GameObject:
   m_ObjectHideFlags: 0
@@ -15831,8 +15862,8 @@ MonoBehaviour:
   freyaCene: {fileID: 0}
   freyaOvill: {fileID: 0}
   Adrikvill: {fileID: 0}
-  FreyaAsyl: {fileID: 0}
-  AdrikAsyl: {fileID: 0}
+  FreyaAsyl: {fileID: 4154108354181944858}
+  AdrikAsyl: {fileID: 800959538}
 --- !u!114 &944486616
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23725,6 +23756,7 @@ MonoBehaviour:
   Doorcam: {fileID: 0}
   MainCam: {fileID: 0}
   objectiveManager: {fileID: 0}
+  Cardgo: {fileID: 0}
 --- !u!114 &1403638562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28784,6 +28816,7 @@ MonoBehaviour:
   Doorcam: {fileID: 0}
   MainCam: {fileID: 0}
   objectiveManager: {fileID: 0}
+  Cardgo: {fileID: 0}
 --- !u!1 &1741489759
 GameObject:
   m_ObjectHideFlags: 0
