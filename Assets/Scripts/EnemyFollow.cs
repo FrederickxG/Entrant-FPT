@@ -118,6 +118,16 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
+    public void SetSpeed(float newSpeed)
+    {
+        moveSpeed = newSpeed;
+    }
+
+    public void SetDamage(int newDamage)
+    {
+        attackDamage = newDamage;
+    }
+
     IEnumerator AttackPlayer()
     {
         float distance = Vector3.Distance(transform.position, health.transform.position);

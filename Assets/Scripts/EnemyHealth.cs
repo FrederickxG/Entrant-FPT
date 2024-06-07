@@ -14,38 +14,43 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public GameObject bloodEffectPrefab;
     public Vector3 bloodEffectOffset = new Vector3(1.5f, 1.5f, 0); 
     public GameStartSequence gameStartSequence;
+    public SceneSequence sceneSequence;
   
-
     private void Start()
     {
         health = maxHealth; // Initialize health to maxHealth
-
     }
 
     public void TakeDamage(float damage)
-{
-    health -= damage;
-    ShowBloodEffect(); // Show the blood effect when taking damage
-
-    if (health <= 0)
     {
-        Destroy(gameObject);
+        health -= damage;
+        ShowBloodEffect(); // Show the blood effect when taking damage
+
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            CheckHealthForEvents();
+        }
     }
-    else
+
+    private void CheckHealthForEvents()
     {
-        CheckHealthForCutscene();
+        if (health == 300 && health > 200 && sceneSequence != null)
+        {
+            sceneSequence.OnIngaHealthDropsBelow300();
+        }
+        else if (health == 200 && health > 100 && sceneSequence != null)
+        {
+            sceneSequence.OnIngaHealthDropsBelow200();
+        }
+        else if (health == 100 && sceneSequence != null)
+        {
+            sceneSequence.OnIngaHealthDropsBelow100();
+        }
     }
-}
-
-private void CheckHealthForCutscene()
-{
-    if (health <= 100 && gameStartSequence != null)
-    {
-        gameStartSequence.StartCutscene(); // Start the cutscene when health reaches 100 and gameStartSequence is assigned
-    }
-}
-
-
 
     void ShowBloodEffect()
     {
