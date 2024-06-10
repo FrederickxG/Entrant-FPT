@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Revolver
   damage: 10
-  maxDistance: 100
-  shootSound: {fileID: 8300000, guid: e0af28ae38c452a4fa7c08893f2b4f52, type: 3}
+  maxDistance: 150
+  shootSound: {fileID: 8300000, guid: 5b4c4c6121bdaf342b0b6f7919473395, type: 3}
   currentAmmo: 6
   magSize: 6
   fireRate: 12

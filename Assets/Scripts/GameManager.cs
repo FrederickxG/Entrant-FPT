@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     public AudioSource DecableD1AudioSource;
     public AudioSource LeonisFAudioSource;
     public AudioSource Adrik2AudioSource;
-    public AudioSource IngaAudioSource;
     public ObjectiveManager objectiveManager;
 
     private bool freyaObjectiveSet = false;
@@ -22,7 +21,6 @@ public class GameManager : MonoBehaviour
     private bool DecableD1ObjectiveSet = false;
     private bool LeonisFObjectiveSet = false;
     private bool Adrik2ObjectiveSet = false;
-    private bool IngaObjectiveSet = false;
 
     // Start is called before the first frame update
     void Start()
@@ -53,10 +51,6 @@ public class GameManager : MonoBehaviour
         else if (Adrik2AudioSource != null)
         {
             Adrik2AudioSource.Play();
-        }
-        else if (IngaAudioSource != null)
-        {
-            IngaAudioSource.Play();
         }
     }
 
@@ -146,6 +140,4 @@ public class GameManager : MonoBehaviour
         objectiveManager.SetObjective("Defeat Adrik");
         Adrik2ObjectiveSet = true; // Mark the objective as set
     }
-
 }
-

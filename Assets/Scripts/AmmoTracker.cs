@@ -1,42 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class AmmoTracker : MonoBehaviour
 {
-    public GameObject gun;
-    public TextMeshProUGUI ammoText;
+    public GameObject Gun;
+    public TextMeshProUGUI AmmoText;
+    public string gunDataName;
     public GunData gunData;
 
-    private void Start()
+    private int currentAmmo;
+    private int magSize;
+
+    void Start()
     {
-        if (gunData == null)
-        {
-            Debug.LogError("GunData is null! Please assign it in the inspector.");
-            return;
-        }
-
-        ReloadGunData(); // Load initial ammo data from GunData
+        ReloadGunData(); // takes the reload data from gundata scriptable object
     }
-
+   
     public void ReloadGunData()
     {
-        // Update ammo values from the GunData scriptable object
-        UpdateAmmoText();
+        //set mag and current ammmo values to the vales from the gun data scriptable object
+         currentAmmo = gunData.currentAmmo;
+         magSize = gunData.magSize;
     }
 
-    private void Update()
+    void Update()
     {
-        // Update the ammo text every frame
-        UpdateAmmoText();
-    }
-
-    private void UpdateAmmoText()
-    {
-        if (gunData != null)
-        {
-            ammoText.text = $"{gunData.currentAmmo}/{gunData.magSize}";
-        }
+        // relays ammon onto the ammo text
+        int totalAmmo = gunData.currentAmmo + magSize * gunData.currentAmmo;
+        AmmoText.text = gunData.currentAmmo + "/6" ;
     }
 }

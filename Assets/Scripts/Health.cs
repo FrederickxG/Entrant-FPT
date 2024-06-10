@@ -13,8 +13,6 @@ public class Health : MonoBehaviour
     [SerializeField] private string gameOverSceneName;
     public AudioSource damageSound;
     [SerializeField] private AudioClip[] hurtSounds;
-    
-    private bool isInvulnerable = false; // Flag to track invulnerability state
 
     private void Start()
     {
@@ -28,33 +26,32 @@ public class Health : MonoBehaviour
     }
 
     public void TakeDamage(float damage)
+{
+    // Check if the player is currently blocking
+    if (playerBlock != null && playerBlock.IsBlocking())
     {
-        if (isInvulnerable) return; // Do not take damage if invulnerable
-
-        // Check if the player is currently blocking
-        if (playerBlock != null && playerBlock.IsBlocking())
-        {
-            // Player is blocking, reduce or negate damage
-            // For example, reduce damage to zero
-            damage = 0f;
-        }
-        else
-        {
-            // Player is not blocking, apply damage
-            damageIndicator.ShowDamageIndicator(); // Show damage indicator
-            PlayHurtSound(); // Play hurt sound
-        }
-
-        currentHealth -= damage; // Subtract damage from current health
-        currentHealth = Mathf.Max(currentHealth, 0); // Ensure health never goes below 0
-        UpdateHealthBar(); // Update health bar
-
-        if (currentHealth <= 0)
-        {
-            // Player has died
-            GameOver();
-        }
+        // Player is blocking, reduce or negate damage
+        // For example, reduce damage to zero
+        damage = 0f;
     }
+    else
+    {
+        // Player is not blocking, apply damage
+        damageIndicator.ShowDamageIndicator(); // Show damage indicator
+        PlayHurtSound(); // Play hurt sound
+    }
+
+    currentHealth -= damage; // Subtract damage from current health
+    currentHealth = Mathf.Max(currentHealth, 0); // Ensure health never goes below 0
+    UpdateHealthBar(); // Update health bar
+
+    if (currentHealth <= 0)
+    {
+        // Player has died
+        GameOver();
+    }
+}
+
 
     void UpdateHealthBar()
     {
@@ -80,10 +77,5 @@ public class Health : MonoBehaviour
         Time.timeScale = 0; // Stops the game
         Cursor.lockState = CursorLockMode.None; // Unlock the mouse cursor
         SceneManager.LoadScene(gameOverSceneName); // Load the game over scene
-    }
-
-    public void SetInvulnerable(bool value)
-    {
-        isInvulnerable = value;
     }
 }
