@@ -15,10 +15,13 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public Vector3 bloodEffectOffset = new Vector3(1.5f, 1.5f, 0); 
     public GameStartSequence gameStartSequence;
     public SceneSequence sceneSequence;
-  
+
+    private float previousHealth; // To keep track of the previous health
+
     private void Start()
     {
         health = maxHealth; // Initialize health to maxHealth
+        previousHealth = health;
     }
 
     public void TakeDamage(float damage)
@@ -38,18 +41,22 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     private void CheckHealthForEvents()
     {
-        if (health == 300 && health > 200 && sceneSequence != null)
+        // Check if the health has dropped below each threshold and if it's crossed downward
+        if (previousHealth > 300 && health <= 300 && sceneSequence != null)
         {
             sceneSequence.OnIngaHealthDropsBelow300();
         }
-        else if (health == 200 && health > 100 && sceneSequence != null)
+        else if (previousHealth > 200 && health <= 200 && sceneSequence != null)
         {
             sceneSequence.OnIngaHealthDropsBelow200();
         }
-        else if (health == 100 && sceneSequence != null)
+        else if (previousHealth > 100 && health <= 100 && sceneSequence != null)
         {
             sceneSequence.OnIngaHealthDropsBelow100();
         }
+
+        // Update previous health
+        previousHealth = health;
     }
 
     void ShowBloodEffect()

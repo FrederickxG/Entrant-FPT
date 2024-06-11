@@ -7,7 +7,7 @@ public class SceneSequence : MonoBehaviour
     public GameObject wakeUpCamera;
     public GameObject cutsceneCamera;
     public GameObject ad100Camera;
-    public GameObject adrikArena;  // Adrik object to monitor
+    public GameObject adrikArena;  
     public GameObject adrikLookBack;
     public GameObject ingaPerch;
     public GameObject ingaArena;
@@ -28,11 +28,14 @@ public class SceneSequence : MonoBehaviour
     public GameObject ingaFinal; // Reference to the Inga final stage object
     public AudioSource finalVoiceLine; // Reference to the final voice line audio source
 
+    private GameObject spawnedKnife; // Reference to the spawned knife
+
     private void Start()
     {
         // Start the sequence
         StartCoroutine(PlaySequence());
     }
+
 
     private IEnumerator PlaySequence()
     {
@@ -42,7 +45,7 @@ public class SceneSequence : MonoBehaviour
         wakeUpCamera.SetActive(true);
         mainCamera.SetActive(false);
         wakeUpAudioSource.Play();
-        
+
         // Wait for wake-up audio to finish
         yield return new WaitForSeconds(wakeUpAudioSource.clip.length);
 
@@ -124,7 +127,7 @@ public class SceneSequence : MonoBehaviour
         ingaArena.SetActive(true);
     }
 
-   public void OnIngaHealthDropsBelow300()
+    public void OnIngaHealthDropsBelow300()
     {
         // Play voice line
         if (lowHealthVoiceLine != null)
@@ -142,7 +145,7 @@ public class SceneSequence : MonoBehaviour
         // Increase Inga's speed
         if (ingaFollow != null)
         {
-            ingaFollow.SetSpeed(53f);
+            ingaFollow.SetSpeed(50f);
         }
     }
 
@@ -170,6 +173,11 @@ public class SceneSequence : MonoBehaviour
 
     public void OnIngaHealthDropsBelow100()
     {
+        // Play final voice line
+        if (finalVoiceLine != null)
+        {
+            finalVoiceLine.Play();
+        }
 
         // Switch to final camera and deactivate UI
         if (finalCam != null)
@@ -177,7 +185,7 @@ public class SceneSequence : MonoBehaviour
             finalCam.SetActive(true);
             mainCamera.SetActive(false);
         }
-        
+
         if (UI != null)
         {
             UI.SetActive(false);
@@ -194,13 +202,12 @@ public class SceneSequence : MonoBehaviour
             ingaFinal.SetActive(true);
         }
 
-        // Play final voice line
-        if (finalVoiceLine != null)
+        // Make player invulnerable
+        if (playerHealth != null)
         {
-            finalVoiceLine.Play();
-            
+            playerHealth.SetInvulnerable(true);
+            StartCoroutine(WaitForFinalVoiceLineToEnd(finalVoiceLine.clip.length));
         }
-
     }
 
     private IEnumerator WaitForFinalVoiceLineToEnd(float duration)
@@ -219,11 +226,11 @@ public class SceneSequence : MonoBehaviour
             UI.SetActive(true);
         }
 
-         if (ingaArena != null)
+        // Make player vulnerable again
+        if (playerHealth != null)
         {
-            ingaArena.SetActive(true);
+            playerHealth.SetInvulnerable(false);
         }
-
     }
 
     private IEnumerator WaitForVoiceLineToEnd(float duration)
