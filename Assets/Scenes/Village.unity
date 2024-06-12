@@ -452,6 +452,8 @@ MonoBehaviour:
   freyaCene: {fileID: 0}
   freyaOvill: {fileID: 4154108353573511302}
   Adrikvill: {fileID: 1295431405}
+  FreyaAsyl: {fileID: 0}
+  AdrikAsyl: {fileID: 0}
 --- !u!114 &78257902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5925,6 +5927,7 @@ MonoBehaviour:
   Doorcam: {fileID: 0}
   MainCam: {fileID: 0}
   objectiveManager: {fileID: 0}
+  Cardgo: {fileID: 0}
 --- !u!1 &486430993 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a08df360d734c4043b496ce77812d2d6,
@@ -7607,6 +7610,7 @@ MonoBehaviour:
   Doorcam: {fileID: 1295431405}
   MainCam: {fileID: 1073177260}
   objectiveManager: {fileID: 0}
+  Cardgo: {fileID: 0}
 --- !u!65 &594843599
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25721,6 +25725,7 @@ MonoBehaviour:
   DecableD1AudioSource: {fileID: 0}
   LeonisFAudioSource: {fileID: 0}
   Adrik2AudioSource: {fileID: 0}
+  IngaAudioSource: {fileID: 0}
   objectiveManager: {fileID: 1954993040}
 --- !u!4 &1954993039
 Transform:
@@ -25976,6 +25981,7 @@ MonoBehaviour:
   Doorcam: {fileID: 0}
   MainCam: {fileID: 0}
   objectiveManager: {fileID: 0}
+  Cardgo: {fileID: 0}
 --- !u!1 &1978842719
 GameObject:
   m_ObjectHideFlags: 0
@@ -27700,7 +27706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2130975745
 Transform:
   m_ObjectHideFlags: 0
@@ -28280,6 +28286,7 @@ MonoBehaviour:
   Doorcam: {fileID: 0}
   MainCam: {fileID: 0}
   objectiveManager: {fileID: 0}
+  Cardgo: {fileID: 0}
 --- !u!1 &1360037974501239
 GameObject:
   m_ObjectHideFlags: 0

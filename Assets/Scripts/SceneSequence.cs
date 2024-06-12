@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class SceneSequence : MonoBehaviour
@@ -27,15 +28,19 @@ public class SceneSequence : MonoBehaviour
     public GameObject finalCam; // Reference to the final camera
     public GameObject ingaFinal; // Reference to the Inga final stage object
     public AudioSource finalVoiceLine; // Reference to the final voice line audio source
-
-    private GameObject spawnedKnife; // Reference to the spawned knife
+    public GameObject IngaDeath;
+    public string rescueSceneName = "rescue";
+    public AudioClip voiceLineClip;
+    public AudioSource voiceLineAudio;
+    public GameObject Ingabody;
+    public GameObject Endcam;
+    private bool isIngaDeathDestroyed = false; // Declare the flag to track IngaDeath destruction
 
     private void Start()
     {
         // Start the sequence
         StartCoroutine(PlaySequence());
     }
-
 
     private IEnumerator PlaySequence()
     {
@@ -101,6 +106,16 @@ public class SceneSequence : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        // Check if IngaDeath is destroyed
+        if (IngaDeath == null && !isIngaDeathDestroyed)
+        {
+            isIngaDeathDestroyed = true;
+            StartCoroutine(HandleIngaDeathDestroyed());
+        }
+    }
+
     private void AdrikDestroyed()
     {
         // Step 5: Cutscene camera and audio
@@ -145,7 +160,7 @@ public class SceneSequence : MonoBehaviour
         // Increase Inga's speed
         if (ingaFollow != null)
         {
-            ingaFollow.SetSpeed(50f);
+            ingaFollow.SetSpeed(48);
         }
     }
 
@@ -167,7 +182,7 @@ public class SceneSequence : MonoBehaviour
         // Increase Inga's damage
         if (ingaFollow != null)
         {
-            ingaFollow.SetDamage(50);
+            ingaFollow.SetDamage(45);
         }
     }
 
@@ -231,6 +246,35 @@ public class SceneSequence : MonoBehaviour
         {
             playerHealth.SetInvulnerable(false);
         }
+
+        if (IngaDeath != null)
+        {
+            IngaDeath.SetActive(true);
+            ingaFinal.SetActive(false);
+        }
+    }
+
+    private IEnumerator HandleIngaDeathDestroyed()
+    {
+        // Deactivate UI
+        if (UI != null)
+        {
+            UI.SetActive(false);
+            Ingabody.SetActive(false);
+            mainCamera.SetActive(false);
+            Endcam.SetActive(true);
+        }
+
+        // Play the voice line
+        if (voiceLineAudio != null && voiceLineClip != null)
+        {
+            voiceLineAudio.clip = voiceLineClip;
+            voiceLineAudio.Play();
+            yield return new WaitForSeconds(voiceLineClip.length);
+        }
+
+        // Transition to the rescue scene
+        SceneManager.LoadScene(rescueSceneName);
     }
 
     private IEnumerator WaitForVoiceLineToEnd(float duration)

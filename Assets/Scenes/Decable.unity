@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0052355397, g: 0.009028047, b: 0.0051113428, a: 1}
+  m_IndirectSpecularColor: {r: 0.0052042017, g: 0.00903434, b: 0.005074352, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6327,7 +6327,17 @@ PrefabInstance:
       objectReference: {fileID: 978800851}
     - target: {fileID: 685128235202216140, guid: 03ff738a18bc0ba439ad09eb7d9ccdda,
         type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 949664432}
+    - target: {fileID: 685128235202216140, guid: 03ff738a18bc0ba439ad09eb7d9ccdda,
+        type: 3}
       propertyPath: AmmoText
+      value: 
+      objectReference: {fileID: 817471898}
+    - target: {fileID: 685128235202216140, guid: 03ff738a18bc0ba439ad09eb7d9ccdda,
+        type: 3}
+      propertyPath: ammoText
       value: 
       objectReference: {fileID: 817471898}
     - target: {fileID: 685128235202216141, guid: 03ff738a18bc0ba439ad09eb7d9ccdda,
@@ -39353,6 +39363,7 @@ MonoBehaviour:
     type: 3}
   bloodEffectOffset: {x: 1.5, y: 1.5, z: 0}
   gameStartSequence: {fileID: 1336938782}
+  sceneSequence: {fileID: 0}
 --- !u!65 &708478783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -61393,6 +61404,7 @@ MonoBehaviour:
   DecableD1AudioSource: {fileID: 1336938783}
   LeonisFAudioSource: {fileID: 0}
   Adrik2AudioSource: {fileID: 0}
+  IngaAudioSource: {fileID: 0}
   objectiveManager: {fileID: 1336938785}
 --- !u!82 &1336938787
 AudioSource:
@@ -65922,6 +65934,7 @@ MonoBehaviour:
     type: 3}
   bloodEffectOffset: {x: 1.5, y: 1.5, z: 0}
   gameStartSequence: {fileID: 1336938782}
+  sceneSequence: {fileID: 0}
 --- !u!65 &1445966431
 BoxCollider:
   m_ObjectHideFlags: 0

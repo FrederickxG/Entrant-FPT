@@ -36,8 +36,17 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         else
         {
             CheckHealthForEvents();
+             CheckHealthForCutscene();
         }
     }
+
+    private void CheckHealthForCutscene()
+{
+    if (health <= 100 && gameStartSequence != null)
+    {
+        gameStartSequence.StartCutscene(); // Start the cutscene when health reaches 100 and gameStartSequence is assigned
+    }
+}
 
     private void CheckHealthForEvents()
     {

@@ -236,25 +236,27 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Entrant\n\nDeveloped by:\r\n Frederick Gardner Jr\r\n\r\nExecutive Producer:
-    \r\nFrederick Gardner Jr\r\n\r\nLead Game Designer: \r\nFrederick Gardner Jr\r\n\r\nAssistant
-    Game Designer: \r\nTalib Folborg\r\n\r\nArt Director: \r\nFrederick Gardner Jr\r\n\r\nLead
-    Programmer: \r\nFrederick Gardner Jr\r\n\r\nLead Writer:\r\nFrederick Gardner
-    Jr\r\n\r\nAssistant Writer:\r\nTalib Folborg\r\n\r\nMusic Composer: \r\nGrey
-    Skies\r\nThe Fourth Horsemen\r\nWolf Schweizer-Gerth(Lobo Loco)\r\n\r\nSound
-    Designer: \r\nPixabay-\r\nJuliusH\r\n\r\nUnity Store Character Artists: \r\nRiezo\r\nAndryuha198\r\nMaksim
-    Bugrimov\r\nBobGrandmaster\r\n3d.rina\r\nTensor\r\nSerhat Yucekaya\r\nPxltiger\r\nPrizma\r\nInari_Green\r\n\r\nSkecthfab
+  m_text: "Entrant \n\r\nDeveloped by: \r\nFrederick Gardner Jr\r\n\r\nExecutive
+    Producer:\r\nFrederick Gardner Jr\r\n\r\nLead Game Designer: \r\nFrederick Gardner
+    Jr\r\n\r\nAssistant Game Designer: \r\nTalib Folborg\r\n\r\nArt Director: \r\nFrederick
+    Gardner Jr\r\n\r\nLead Programmer: \r\nFrederick Gardner Jr\r\n\r\nLead Writer:\r\nFrederick
+    Gardner Jr\r\n\r\nAssistant Writer:\r\nTalib Folborg\r\n\r\nMusic Composer: \r\nInnamorare(Frederick
+    Gardner Jr)\r\n\r\nSound Designer: \r\nPixabay\r\nOmarSounds\r\n\r\nUnity Store
+    Character Artists: \r\nRiezo\r\nAndryuha198\r\nMaksim Bugrimov\r\nBobGrandmaster\r\n3d.rina\r\nTensor\r\nSerhat
+    Yucekaya\r\nPxltiger\r\nPrizma\r\nInari_Green\r\nAll * Star Characters\r\n\r\n\r\nSkecthfab
     Character Artists:\r\nilarioseb\r\n\r\nUnity Store Environment Artists: \r\nFrederick
-    Gardner Jr\r\nNikiYani\r\nLukas Bobor\r\nJosue Candela\r\nNorSat Entertainment\r\nCrash
-    Psycho\r\nRokay3D\r\nFoeJofMay\r\nAK STUDIO ART\r\nCobble Games\r\nRCC Design\r\nDuane's
-    Mind\r\nPixel Games\r\nWhiteXopc\r\nSpaceZeta\r\nAleksn09\r\nAerolife\r\nCookiepopworks\r\nEretichable\r\nPolyFix\r\nErvis
-    Lilaj\r\nWing13GD\r\nNappin\r\nElcanetay\r\nVIS Games\r\nGeniuscrate Games\r\n3D.BJ\r\n\r\n\rSkecthfab
+    Gardner Jr\r\nOneProgram's\r\nNikiYani\r\nLukas Bobor\r\nJosue Candela\r\nNorSat
+    Entertainment\r\nCrash Psycho\r\nRokay3D\r\nFoeJofMay\r\nAK STUDIO ART\r\nCobble
+    Games\r\nRCC Design\r\nDuane's Mind\r\nPixel Games\r\nWhiteXopc\r\nSpaceZeta\r\nAleksn09\r\nAerolife\r\nCookiepopworks\r\nEretichable\r\nPolyFix\r\nErvis
+    Lilaj\r\nWing13GD\r\nNappin\r\nElcanetay\r\nVIS Games\r\nGeniuscrate Games\r\n3D.BJ\r\nTHOMAS
+    K. KERFF\r\nDIABOLICAL GAMES\r\nMYXERMAN\r\nBilal Hashim\r\n\r\n\r\nSkecthfab
     Environmental Artists:\r\nSaoudiabdo57\r\n\r\nYoutube tutorials:\r\nPlai\r\nSolo
-    Game Dev\r\nRytech\r\nBMo\r\nJimmy Vegas\r\n\r\n\rVoice Acting: \r\nFrederick
-    Gardner Jr as Ato Carter\r\nTalib Folborg as Inga Mischa\r\nMariam Begum as Yelizaveta
-    Adrik\r\nAdam Koelsch as Leonis Laurier\r\nEleven Labs Ai as Freya\r\nJohn Colon
-    as Idris Morgan\r\n??? as Dimitri Lason \r\n??? as Hermione Briar\r\n??? as Dionne
-    Mischa \r\n\r\nQuality Assurance:\r\nSakib Shams\r\nFrederick GardnerJr\r\n\r\n"
+    Game Dev\r\nRytech\r\nBMo\r\nJimmy Vegas\r\nJake Makes Games\r\n\r\nVoice Acting:
+    \r\nFrederick Gardner Jr as Ato Carter\r\nTalib Folborg as Inga Mischa\r\nAshley
+    Urena as Yelizaveta Adrik\n??? as Leonis Laurier\r\nEleven Labs Ai as Freya\r\nJohn
+    Colon as Dimitri Lason \r\nEleven AI as Hermione Briar\r\nEleven Labs Ai as Dionne
+    Mischa \r\nEleven Labs Ai as Idris Morgan\r\n\r\n\r\nQuality Assurance:\r\nSakib
+    Shams\r\nFrederick GardnerJr\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 55684882bc0802d4584f21ebf34af314, type: 2}
   m_sharedMaterial: {fileID: 4423993774632382410, guid: 55684882bc0802d4584f21ebf34af314,
@@ -670,7 +672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfd7c989625e14304bcda180809a45e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Manor: 
+  Prerecap: 
 --- !u!1 &1317570740
 GameObject:
   m_ObjectHideFlags: 0
