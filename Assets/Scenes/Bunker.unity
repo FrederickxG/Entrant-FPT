@@ -6067,6 +6067,7 @@ MonoBehaviour:
   bloodEffectPrefab: {fileID: 0}
   bloodEffectOffset: {x: 1.5, y: 1.5, z: 0}
   gameStartSequence: {fileID: 0}
+  sceneSequence: {fileID: 0}
 --- !u!114 &341422298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15588,6 +15589,7 @@ MonoBehaviour:
   bloodEffectPrefab: {fileID: 0}
   bloodEffectOffset: {x: 1.5, y: 1.5, z: 0}
   gameStartSequence: {fileID: 0}
+  sceneSequence: {fileID: 0}
 --- !u!114 &939761246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19276,7 +19278,17 @@ PrefabInstance:
       objectReference: {fileID: 337191372}
     - target: {fileID: 685128235202216140, guid: 03ff738a18bc0ba439ad09eb7d9ccdda,
         type: 3}
+      propertyPath: gun
+      value: 
+      objectReference: {fileID: 1779145688}
+    - target: {fileID: 685128235202216140, guid: 03ff738a18bc0ba439ad09eb7d9ccdda,
+        type: 3}
       propertyPath: AmmoText
+      value: 
+      objectReference: {fileID: 725012621}
+    - target: {fileID: 685128235202216140, guid: 03ff738a18bc0ba439ad09eb7d9ccdda,
+        type: 3}
+      propertyPath: ammoText
       value: 
       objectReference: {fileID: 725012621}
     - target: {fileID: 685128235202216141, guid: 03ff738a18bc0ba439ad09eb7d9ccdda,
@@ -20354,6 +20366,7 @@ MonoBehaviour:
   bloodEffectPrefab: {fileID: 0}
   bloodEffectOffset: {x: 1.5, y: 1.5, z: 0}
   gameStartSequence: {fileID: 0}
+  sceneSequence: {fileID: 0}
 --- !u!114 &1187368525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23590,6 +23603,7 @@ MonoBehaviour:
   DecableD1AudioSource: {fileID: 0}
   LeonisFAudioSource: {fileID: 0}
   Adrik2AudioSource: {fileID: 0}
+  IngaAudioSource: {fileID: 0}
   objectiveManager: {fileID: 1403638562}
 --- !u!4 &1403638558
 Transform:
@@ -34330,6 +34344,7 @@ MonoBehaviour:
   bloodEffectPrefab: {fileID: 0}
   bloodEffectOffset: {x: 1.5, y: 1.5, z: 0}
   gameStartSequence: {fileID: 0}
+  sceneSequence: {fileID: 0}
 --- !u!114 &1909969294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38809,6 +38824,7 @@ MonoBehaviour:
   bloodEffectPrefab: {fileID: 0}
   bloodEffectOffset: {x: 1.5, y: 1.5, z: 0}
   gameStartSequence: {fileID: 0}
+  sceneSequence: {fileID: 0}
 --- !u!114 &2062438230652446645
 MonoBehaviour:
   m_ObjectHideFlags: 0

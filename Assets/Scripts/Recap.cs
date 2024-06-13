@@ -7,11 +7,11 @@ public class Recap : MonoBehaviour
 {
     public AudioSource recapAudioSource; // Reference to the recap AudioSource component
     public AudioSource nextAudioSource;  // Reference to the next AudioSource component for the second voice line
-    public GameObject cam2;              // The second camera GameObject
-    public GameObject door;              // The door GameObject to be set inactive
-    public GameObject openDoor;          // The open door GameObject to be set active
-    public GameObject nsc;               // The NSC GameObject to be set active
-    public string nextSceneName;         // The name of the next scene to load
+    public GameObject cam2;// The second camera GameObject
+    public GameObject door;// The door GameObject to be set inactive
+    public GameObject openDoor;// The open door GameObject to be set active
+    public GameObject nsc; // The NSC GameObject to be set active
+    public string nextSceneName;// The name of the next scene to load
 
     private void Start()
     {

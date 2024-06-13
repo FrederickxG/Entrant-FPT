@@ -260,7 +260,7 @@ public class SceneSequence : MonoBehaviour
         if (UI != null)
         {
             UI.SetActive(false);
-            Ingabody.SetActive(false);
+            Ingabody.SetActive(true);
             mainCamera.SetActive(false);
             Endcam.SetActive(true);
         }
